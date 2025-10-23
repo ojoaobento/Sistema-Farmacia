@@ -31,4 +31,11 @@ typedef struct{
     ApontadorCliente ultimo;
 }TipoListaCliente;
 
+
+void gotoxy();
+
+void tela();
+
+void menuPrincipal();
+
 #endif
