@@ -7,6 +7,9 @@ void menuClientes(){
     system("cls");
     tela();
 
+    gotoxy(32, 9);
+    printf("CADASTRO DE CLIENTES");
+
     gotoxy(35,12);
     printf("1- INCLUSAO");
 
