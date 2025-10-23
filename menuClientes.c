@@ -1,34 +1,34 @@
 #include "funcoes.h"
 
-void menuPrincipal(){
+void menuClientes(){
     
     int opcao;
+    
+    system("cls");
+    tela();
 
     gotoxy(35,12);
-    printf("1- CLIENTES");
+    printf("1- INCLUSAO");
 
     gotoxy(35,13);
-    printf("2- MEDICAMENTOS");
+    printf("2- ALTERAR");
 
     gotoxy(35,14);
-    printf("3- FORNECEDORES");
+    printf("3- EXCLUSAO");
 
     gotoxy(35,15);
-    printf("4- MOVIMENTACOES");
+    printf("4- CONSULTAR");
 
     gotoxy(35,16);
-    printf("5- RELATORIOS");
+    printf("5- RETORNAR");
 
-    gotoxy(35,17);
-    printf("6- SAIR");
-
-    gotoxy(35,19);
+    gotoxy(35,18);
     printf("OPCAO: ");
     scanf("%d", &opcao);
 
     switch(opcao){
         case 1:
-            menuClientes();
+
             break;
         case 2:
 
@@ -42,12 +42,10 @@ void menuPrincipal(){
         case 5:
 
             break;
-        case 6:
-
-            break;
         default:
 
             break;
+        
     }
 
 }

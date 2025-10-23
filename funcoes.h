@@ -38,4 +38,6 @@ void tela();
 
 void menuPrincipal();
 
+void menuClientes();
+
 #endif
