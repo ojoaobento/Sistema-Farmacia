@@ -29,7 +29,7 @@ void tela(){
     gotoxy(28,6);
     printf("SISTEMA DE GESTAO DE FARMACIA");
 
-    gotoxy(40,8);
+    gotoxy(40,7);
     printf("VIDA+");
 
 
