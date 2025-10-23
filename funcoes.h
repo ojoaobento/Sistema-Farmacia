@@ -1,7 +1,6 @@
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -10,12 +9,13 @@
 #include <conio.h> 
 
 typedef struct{
-    int cd_cliente;
-    char nm_cliente[50];
-    char nr_documento[20];
-    char nr_telefone[15];
-    char ds_endereco[50];
-    char dt_cadastro[19];
+    int id_cliente;
+    char nome[50];
+    char cpf[15];
+    char telefone[20];
+    char email[50];
+    char endereco[80];
+    char data_cadastro[19];
     int status;
 }reg_clientes;
 
