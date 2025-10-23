@@ -7,5 +7,6 @@ int main(){
     gotoxy();
     tela();
 
-    getch();
+    menuPrincipal();
+
 }
