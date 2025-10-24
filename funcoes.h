@@ -40,4 +40,8 @@ void menuPrincipal();
 
 void menuClientes();
 
+void inclusaoCliente();
+
+void telaCliente();
+
 #endif

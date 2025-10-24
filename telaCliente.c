@@ -11,28 +11,28 @@ void telaCliente(){
     // char data_cadastro[19];
     // int status;
 
-    gotoxy(4,5);
+    gotoxy(7,10);
     printf("ID: ");
 
-    gotoxy(4,20);
+    gotoxy(45,10);
     printf("NOME: ");
 
-    gotoxy(4,6);
+    gotoxy(7,12);
     printf("CPF: ");
 
-    gotoxy(4,22);
+    gotoxy(45,12);
     printf("TELEFONE: ");
 
-    gotoxy(4,7);
+    gotoxy(7,14);
     printf("EMAIL: ");
 
-    printf(4,8);
+    gotoxy(7,16);
     printf("ENDERECO: ");
 
-    gotoxy(4,9);
+    gotoxy(7,18);
     printf("DATA CADASTRO: ");
 
-    gotoxy(4,32);
+    gotoxy(45,18);
     printf("STATUS: ");
 
 

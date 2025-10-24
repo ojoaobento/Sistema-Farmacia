@@ -7,10 +7,14 @@ void inclusaoCliente(TipoListaCliente *lista){
     novoCadastro = (ApontadorCliente) malloc(sizeof(TipoCliente));
 
 
-    
+
     
     system("cls");
     tela();
+
+    telaCliente();
+
+    getch();
 
 
 
