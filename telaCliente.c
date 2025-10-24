@@ -4,7 +4,7 @@ void telaCliente(){
     gotoxy(7,10);
     printf("ID: ");
 
-    gotoxy(45,10);
+    gotoxy(25,10);
     printf("NOME: ");
 
     gotoxy(7,12);

@@ -14,7 +14,7 @@ typedef struct{
     char cpf[15];
     char telefone[20];
     char email[50];
-    char endereco[80];
+    char endereco[60];
     char data_cadastro[19];
     int status;
 }reg_clientes;

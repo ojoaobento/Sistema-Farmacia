@@ -11,14 +11,14 @@ void inclusaoCliente(TipoListaCliente *lista){
 
     telaCliente();
 
-    gotoxy(9,10);
+    gotoxy(11,10);
     scanf("%d", &novoCadastro->conteudo.id_cliente);
 
-    gotoxy(50,10);
+    gotoxy(31,10);
     fflush(stdin);
     fgets(novoCadastro->conteudo.nome,50,stdin);
 
-    gotoxy(15,12);
+    gotoxy(12,12);
     fflush(stdin);
     fgets(novoCadastro->conteudo.cpf,15,stdin);
 
@@ -26,19 +26,19 @@ void inclusaoCliente(TipoListaCliente *lista){
     fflush(stdin);
     fgets(novoCadastro->conteudo.telefone,20,stdin);
 
-    gotoxy(15,14);
+    gotoxy(14,14);
     fflush(stdin);
     fgets(novoCadastro->conteudo.email,50,stdin);
 
     gotoxy(17,16);
     fflush(stdin);
-    fgets(novoCadastro->conteudo.endereco,80,stdin);
+    fgets(novoCadastro->conteudo.endereco,60,stdin);
 
-    gotoxy(17,18);
+    gotoxy(22,18);
     fflush(stdin);
     fgets(novoCadastro->conteudo.data_cadastro,19,stdin);
 
-    gotoxy(55,18);
+    gotoxy(53,18);
     scanf("%d", &novoCadastro->conteudo.status);
 
 }
