@@ -1,16 +1,7 @@
 #include "funcoes.h"
 
 void telaCliente(){
-
-    // int id_cliente;
-    // char nome[50];
-    // char cpf[15];
-    // char telefone[20];
-    // char email[50];
-    // char endereco[80];
-    // char data_cadastro[19];
-    // int status;
-
+    
     gotoxy(7,10);
     printf("ID: ");
 
