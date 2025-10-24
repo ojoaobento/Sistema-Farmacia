@@ -94,4 +94,6 @@ void inclusaoCliente(TipoListaCliente *lista){
 
     }while(inclusao != 'n' && inclusao != 'N');
 
+    return;
+
 }
