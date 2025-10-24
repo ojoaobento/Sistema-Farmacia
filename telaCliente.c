@@ -1,7 +1,6 @@
 #include "funcoes.h"
 
 void telaCliente(){
-    
     gotoxy(7,10);
     printf("ID: ");
 
