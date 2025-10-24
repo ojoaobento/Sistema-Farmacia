@@ -36,6 +36,8 @@ void gotoxy();
 
 void tela();
 
+void limpa_msg();
+
 void menuPrincipal();
 
 void menuClientes();

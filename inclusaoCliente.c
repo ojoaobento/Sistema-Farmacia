@@ -3,8 +3,10 @@
 void inclusaoCliente(TipoListaCliente *lista){
     
     ApontadorCliente novoCadastro;
+    ApontadorCliente p_auxiliar;
     char confirmacao;
     char inclusao;
+    int verificacao;
 
     do {
         novoCadastro = (ApontadorCliente) malloc(sizeof(TipoCliente));
@@ -14,8 +16,28 @@ void inclusaoCliente(TipoListaCliente *lista){
 
         telaCliente();
 
-        gotoxy(11,10);
-        scanf("%d", &novoCadastro->conteudo.id_cliente);
+        do {
+            gotoxy(11,10);
+            scanf("%d", &novoCadastro->conteudo.id_cliente);
+
+            p_auxiliar = lista->primeiro;
+            verificacao = 0;
+            while(p_auxiliar != NULL){
+                if(p_auxiliar != novoCadastro && p_auxiliar->conteudo.id_cliente == novoCadastro->conteudo.id_cliente){
+                    
+                    gotoxy(11,10);
+                    printf(" ");
+                    
+                    limpa_msg();
+                    gotoxy("O CODIGO INSERIDO JA EXISTE, INSIRA OUTRO.............");
+                    getch();
+
+                    verificacao=1;
+
+                    break;
+                }
+            }
+        } while(verificacao == 1);
 
         gotoxy(31,10);
         fflush(stdin);
