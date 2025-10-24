@@ -11,6 +11,6 @@ int main(){
     gotoxy();
     tela();
 
-    menuPrincipal(lista);
+    menuPrincipal(&lista);
 
 }
