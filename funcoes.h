@@ -46,4 +46,6 @@ void inclusaoCliente();
 
 void telaCliente();
 
+void pesquisaCliente();
+
 #endif
