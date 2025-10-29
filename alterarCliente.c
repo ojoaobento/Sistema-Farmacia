@@ -3,6 +3,7 @@
 void alterarCliente(TipoListaCliente *lista){
 
     int codigo;
+    int opcao;
     ApontadorCliente resultado;
 
     system("cls");
@@ -56,6 +57,11 @@ void alterarCliente(TipoListaCliente *lista){
 
         gotoxy(53,17);
         printf("%d", resultado->conteudo.status);
+
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERAR CAMPO(1-NOME,2-CPF,3-TEL,4-EMAIL,5-END,6-DATA,7-STATUS): ");
+        scanf("%d", &opcao);
 
 
     }

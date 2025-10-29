@@ -48,4 +48,9 @@ void telaCliente();
 
 ApontadorCliente pesquisaCliente();
 
+void alterarCliente();
+
+
+
+
 #endif

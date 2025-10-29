@@ -35,7 +35,7 @@ void menuClientes(TipoListaCliente *lista){
                 inclusaoCliente(lista);
                 break;
             case 2:
-
+                alterarCliente(lista);
                 break;
             case 3:
 

@@ -7,7 +7,7 @@ int main(){
     lista.primeiro = NULL;
     lista.ultimo = NULL;
 
-    system("color 0B");
+    system("color 0A");
     gotoxy();
     tela();
 
