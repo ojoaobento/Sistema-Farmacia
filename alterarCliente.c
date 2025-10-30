@@ -5,7 +5,7 @@ void alterarCliente(TipoListaCliente *lista){
     int codigo;
     int opcao;
     int codigoVerificacao;
-    int alteracao;
+    char alteracao;
     reg_clientes temporaria;
     ApontadorCliente resultado;
     ApontadorCliente p_auxiliar;
@@ -72,6 +72,10 @@ void alterarCliente(TipoListaCliente *lista){
                 do {
                     codigoVerificacao = 0;
                     limpa_msg();
+                    gotoxy(2,23);
+                    printf("ALTERANDO CAMPO");
+
+
                     gotoxy(11,9);
                     scanf("%d", temporaria.id_cliente);
 
@@ -93,16 +97,79 @@ void alterarCliente(TipoListaCliente *lista){
                     }
                 } while(codigoVerificacao == 1);
 
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO (S/N) ? ");
+                scanf(" %c", &alteracao);
 
+                if(alteracao == 's' || alteracao == 'S'){
+                    resultado->conteudo.id_cliente = temporaria.id_cliente;
+                } else {
+                    return;
+                }
 
                 break;
             case 2:
 
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(31,9);
+                scanf("%d", temporaria.nome);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO (S/N) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.nome, temporaria.nome);
+                } else {
+                    return;
+                }
+
                 break;
             case 3:
 
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(12,11);
+                fflush(stdin);
+                fgets(temporaria.cpf,15,stdin);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO (S/N) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.cpf, temporaria.cpf);
+                } else {
+                    return;
+                }
+
+
                 break;
             case 4:
+
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(55,11);
+                fflush(stdin);
+                fgets(temporaria.telefone,20,stdin);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO (S/N) ? ");
+                scanf(" %c", &alteracao);
+
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.telefone, temporaria.telefone);
+                } else {
+                    return;
+                }              
 
                 break;
             case 5:
