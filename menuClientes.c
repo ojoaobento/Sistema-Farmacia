@@ -41,7 +41,7 @@ void menuClientes(TipoListaCliente *lista){
                 exclusaoCliente(lista);
                 break;
             case 4:
-
+                consultaCliente(lista);
                 break;
             case 5:
 

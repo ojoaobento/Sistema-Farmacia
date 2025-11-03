@@ -52,6 +52,7 @@ void alterarCliente();
 
 void exclusaoCliente();
 
+void consultaCliente();
 
 
 
