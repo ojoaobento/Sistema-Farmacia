@@ -50,6 +50,8 @@ ApontadorCliente pesquisaCliente();
 
 void alterarCliente();
 
+void exclusaoCliente();
+
 
 
 
