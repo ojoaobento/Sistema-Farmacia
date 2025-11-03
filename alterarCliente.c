@@ -6,6 +6,7 @@ void alterarCliente(TipoListaCliente *lista){
     int opcao;
     int codigoVerificacao;
     char alteracao;
+    char novaAlteracao;
     reg_clientes temporaria;
     ApontadorCliente resultado;
     ApontadorCliente p_auxiliar;
@@ -33,6 +34,8 @@ void alterarCliente(TipoListaCliente *lista){
 
         return;
     } else {
+
+        do {
         system("cls");
         tela();
         telaCliente();
@@ -63,26 +66,27 @@ void alterarCliente(TipoListaCliente *lista){
 
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERAR CAMPO(1-ID,2-NOME,3-CPF,4-TEL,5-EMAIL,6-END,7-DATA,8-STATUS,0-SAIR): ");
+        printf("ALTERAR CAMPO(1-ID,2-NOM,3-CPF,4-TEL,5-EMAIL,6-END,7-DATA,8-STA,0-SAIR): ");
         scanf("%d", &opcao);
 
         switch(opcao){
             case 1:
 
                 do {
-                    codigoVerificacao = 0;
                     limpa_msg();
                     gotoxy(2,23);
                     printf("ALTERANDO CAMPO");
 
+                    gotoxy(11,9);
+                    printf(" ");
 
                     gotoxy(11,9);
-                    scanf("%d", temporaria.id_cliente);
+                    scanf("%d", &temporaria.id_cliente);
 
                     p_auxiliar = lista->primeiro;
-
+                    codigoVerificacao = 0;
                     while(p_auxiliar != NULL){
-                        if(p_auxiliar->conteudo.id_cliente == temporaria.id_cliente){
+                        if(p_auxiliar != resultado && p_auxiliar->conteudo.id_cliente == temporaria.id_cliente){
 
                             limpa_msg();
                             gotoxy(2,23);
@@ -115,7 +119,11 @@ void alterarCliente(TipoListaCliente *lista){
                 printf("ALTERANDO CAMPO");
 
                 gotoxy(31,9);
-                scanf("%d", temporaria.nome);
+                printf("                                                            ");
+
+                gotoxy(31,9);
+                fflush(stdin);
+                fgets(temporaria.nome,50,stdin);
 
                 gotoxy(30,19);
                 printf("CONFIRMA ALTERACAO (S/N) ? ");
@@ -133,6 +141,10 @@ void alterarCliente(TipoListaCliente *lista){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("ALTERANDO CAMPO");
+
+                gotoxy(12,11);
+                printf("               ");
+
 
                 gotoxy(12,11);
                 fflush(stdin);
@@ -157,6 +169,9 @@ void alterarCliente(TipoListaCliente *lista){
                 printf("ALTERANDO CAMPO");
 
                 gotoxy(55,11);
+                printf("                    ");
+
+                gotoxy(55,11);
                 fflush(stdin);
                 fgets(temporaria.telefone,20,stdin);
 
@@ -174,24 +189,119 @@ void alterarCliente(TipoListaCliente *lista){
                 break;
             case 5:
 
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(14,13);
+                printf("                                                            ");
+
+                gotoxy(14,13);
+                fflush(stdin);
+                fgets(temporaria.email,50,stdin);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO (S/N) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.email, temporaria.email);
+                } else {
+                    return;
+                }
+
                 break;
             case 6:
+
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(17,15);
+                printf("                                                                      ");
+
+                gotoxy(17,15);
+                fflush(stdin);
+                fgets(temporaria.endereco,60,stdin);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.endereco,temporaria.endereco);
+                } else {
+                    return;
+                }
 
                 break;
             case 7:
 
+                limpa_msg();
+                gotoxy(2,23);
+                printf("ALTERANDO CAMPO");
+
+                gotoxy(22,17);
+                printf("                   ");               
+
+                gotoxy(22,17);
+                fflush(stdin);
+                fgets(temporaria.data_cadastro,19,stdin);
+
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    strcpy(resultado->conteudo.data_cadastro,temporaria.data_cadastro);
+                } else {
+                    return;
+                }
+
                 break;
             case 8:
+                
+                limpa_msg();
+                gotoxy(2,23);
+
+                gotoxy(53,17);
+                printf(" ");
+
+                gotoxy(53,17);
+                scanf("%d", &temporaria.status);
+
+                gotoxy(30,19);
+                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
+                scanf(" %c", &alteracao);
+
+                if(alteracao == 's' || alteracao == 'S'){
+                    resultado->conteudo.status = temporaria.status;
+                } else {
+                    return;
+                }
 
                 break;
             case 0:
-
+                return;
                 break;
             default:
+                system("cls");
 
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, RETORNE AO MENU PRINCIPAL.....");
+                getch();
+
+                return;
                 break;
         }
 
-    }
+        gotoxy(30,20);
+        printf("NOVA ALTERACAO ( S/N ) ? ");
+        scanf(" %c", &novaAlteracao);
 
+        }while(novaAlteracao != 'n' && novaAlteracao != 'N');
+    }
+    return;
 }
