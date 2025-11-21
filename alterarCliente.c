@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void alterarCliente(TipoListaCliente *lista){
+void alterarCliente(TipoListaCliente *listaCliente){
 
     int codigo;
     int opcao;
@@ -20,7 +20,7 @@ void alterarCliente(TipoListaCliente *lista){
     printf("INSIRA O CODIGO DO CLIENTE QUE DESEJA ALTERAR: ");
     scanf("%d", &codigo);
 
-    resultado = pesquisaCliente(codigo, lista);
+    resultado = pesquisaCliente(listaCliente, codigo);
 
     if(resultado == NULL){
         system("cls");
@@ -39,30 +39,7 @@ void alterarCliente(TipoListaCliente *lista){
         system("cls");
         tela();
         telaCliente();
-
-        gotoxy(11,9);
-        printf("%d", resultado->conteudo.id_cliente);
-
-        gotoxy(31,9);
-        printf("%s", resultado->conteudo.nome);
-
-        gotoxy(12,11);
-        printf("%s", resultado->conteudo.cpf);
-
-        gotoxy(55,11);
-        printf("%s", resultado->conteudo.telefone);
-
-        gotoxy(14,13);
-        printf("%s", resultado->conteudo.email);
-
-        gotoxy(17,15);
-        printf("%s", resultado->conteudo.endereco);
-
-        gotoxy(22,17);
-        printf("%s", resultado->conteudo.data_cadastro);
-
-        gotoxy(53,17);
-        printf("%d", resultado->conteudo.status);
+        dadosCliente(listaCliente, codigo);
 
         limpa_msg();
         gotoxy(2,23);
@@ -71,216 +48,28 @@ void alterarCliente(TipoListaCliente *lista){
 
         switch(opcao){
             case 1:
-
-                do {
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO");
-
-                    gotoxy(11,9);
-                    printf(" ");
-
-                    gotoxy(11,9);
-                    scanf("%d", &temporaria.id_cliente);
-
-                    p_auxiliar = lista->primeiro;
-                    codigoVerificacao = 0;
-                    while(p_auxiliar != NULL){
-                        if(p_auxiliar != resultado && p_auxiliar->conteudo.id_cliente == temporaria.id_cliente){
-
-                            limpa_msg();
-                            gotoxy(2,23);
-                            printf("O CODIGO INSERIDO JA EXISTE, INSIRA OUTRO........");
-                            codigoVerificacao = 1;
-                            getch();
-
-                            break;
-                        }
-
-                        p_auxiliar = p_auxiliar->proximo;
-                    }
-                } while(codigoVerificacao == 1);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO (S/N) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    resultado->conteudo.id_cliente = temporaria.id_cliente;
-                } else {
-                    return;
-                }
-
+                alterarClienteID(listaCliente, codigo);
                 break;
             case 2:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(31,9);
-                printf("                                                            ");
-
-                gotoxy(31,9);
-                fflush(stdin);
-                fgets(temporaria.nome,50,stdin);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO (S/N) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.nome, temporaria.nome);
-                } else {
-                    return;
-                }
-
+                alterarClienteNome(listaCliente, codigo);
                 break;
             case 3:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(12,11);
-                printf("               ");
-
-
-                gotoxy(12,11);
-                fflush(stdin);
-                fgets(temporaria.cpf,15,stdin);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO (S/N) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.cpf, temporaria.cpf);
-                } else {
-                    return;
-                }
-
-
+                alterarClienteCPF(listaCliente, codigo);
                 break;
-            case 4:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(55,11);
-                printf("                    ");
-
-                gotoxy(55,11);
-                fflush(stdin);
-                fgets(temporaria.telefone,20,stdin);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO (S/N) ? ");
-                scanf(" %c", &alteracao);
-
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.telefone, temporaria.telefone);
-                } else {
-                    return;
-                }              
-
+            case 4: 
+                alterarClienteTelefone(listaCliente, codigo);
                 break;
             case 5:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(14,13);
-                printf("                                                            ");
-
-                gotoxy(14,13);
-                fflush(stdin);
-                fgets(temporaria.email,50,stdin);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO (S/N) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.email, temporaria.email);
-                } else {
-                    return;
-                }
-
+                alterarClienteEmail(listaCliente, codigo);
                 break;
             case 6:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(17,15);
-                printf("                                                                      ");
-
-                gotoxy(17,15);
-                fflush(stdin);
-                fgets(temporaria.endereco,60,stdin);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.endereco,temporaria.endereco);
-                } else {
-                    return;
-                }
-
+                alterarClienteEnd(listaCliente, codigo);
                 break;
             case 7:
-
-                limpa_msg();
-                gotoxy(2,23);
-                printf("ALTERANDO CAMPO");
-
-                gotoxy(22,17);
-                printf("                   ");               
-
-                gotoxy(22,17);
-                fflush(stdin);
-                fgets(temporaria.data_cadastro,19,stdin);
-
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    strcpy(resultado->conteudo.data_cadastro,temporaria.data_cadastro);
-                } else {
-                    return;
-                }
-
+                alterarClienteData(listaCliente, codigo);
                 break;
             case 8:
-                
-                limpa_msg();
-                gotoxy(2,23);
-
-                gotoxy(53,17);
-                printf(" ");
-
-                gotoxy(53,17);
-                scanf("%d", &temporaria.status);
-
-                gotoxy(30,19);
-                printf("CONFIRMA ALTERACAO ( S/N ) ? ");
-                scanf(" %c", &alteracao);
-
-                if(alteracao == 's' || alteracao == 'S'){
-                    resultado->conteudo.status = temporaria.status;
-                } else {
-                    return;
-                }
-
+                alterarClienteStatus(listaCliente, codigo);
                 break;
             case 0:
                 return;

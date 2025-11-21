@@ -3,14 +3,14 @@
 
 int main(){
 
-    TipoListaCliente lista;
-    lista.primeiro = NULL;
-    lista.ultimo = NULL;
+    TipoListaCliente listaCliente;
+    listaCliente.primeiro = NULL;
+    listaCliente.ultimo = NULL;
 
-    system("color 0A");
+    system("color 0F");
     gotoxy();
     tela();
 
-    menuPrincipal(&lista);
+    menuPrincipal(&listaCliente);
 
 }

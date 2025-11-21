@@ -50,10 +50,25 @@ ApontadorCliente pesquisaCliente();
 
 void alterarCliente();
 
+void alterarClienteID();
+
+void alterarClienteNome();
+
+void alterarClienteStatus();
+
+void alterarClienteEnd();
+
+void alterarClienteTelefone();
+
+void alterarClienteEmail();
+
+void alterarClienteCPF();
+
+void alterarClienteData();
+
 void exclusaoCliente();
 
 void consultaCliente();
-
 
 
 #endif
