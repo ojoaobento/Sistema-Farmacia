@@ -4,7 +4,7 @@ void dadosCliente(TipoListaCliente *listaCliente, int codigo){
 
     ApontadorCliente resultado;
 
-    resultado = pesquisaCliente(codigo, listaCliente);
+    resultado = pesquisaCliente(listaCliente, codigo);
 
     gotoxy(11,9);
     printf("%d", resultado->conteudo.id_cliente);

@@ -70,5 +70,7 @@ void exclusaoCliente();
 
 void consultaCliente();
 
+void dadosCliente();
+
 
 #endif

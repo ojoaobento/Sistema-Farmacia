@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-ApontadorCliente pesquisaCliente(int codigo, TipoListaCliente *lista){
+ApontadorCliente pesquisaCliente(TipoListaCliente *lista, int codigo){
     
     ApontadorCliente p_auxiliar;
 

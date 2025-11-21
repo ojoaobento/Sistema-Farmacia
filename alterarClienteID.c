@@ -2,11 +2,8 @@
 
 void alterarClienteID(TipoListaCliente *listaCliente, int codigo){
 
-    int codigo;
-    int opcao;
     int codigoVerificacao;
     char alteracao;
-    char novaAlteracao;
     reg_clientes temporaria;
     ApontadorCliente resultado;
     ApontadorCliente p_auxiliar;
