@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menuPrincipal(TipoListaCliente *lista){
+void menuPrincipal(TipoListaCliente *listaCliente){
     
     int opcao;
 
@@ -29,7 +29,7 @@ void menuPrincipal(TipoListaCliente *lista){
 
         switch(opcao){
             case 1:
-                menuClientes(lista);
+                menuClientes(listaCliente);
                 break;
             case 2:
 

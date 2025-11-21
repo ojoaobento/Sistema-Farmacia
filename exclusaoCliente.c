@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void exclusaoCliente(TipoListaCliente *lista){
+void exclusaoCliente(TipoListaCliente *listaCliente){
 
     ApontadorCliente resultado;
     ApontadorCliente p_auxiliar;
@@ -19,7 +19,7 @@ void exclusaoCliente(TipoListaCliente *lista){
         printf("INSIRA O CODIGO DO CADASTRO QUE DESEJA EXCLUIR: ");
         scanf("%d", &codigo);
 
-        resultado = pesquisaCliente(codigo, lista);
+        resultado = pesquisaCliente(listaCliente, codigo);
 
         if(resultado == NULL){
             system("cls");
@@ -37,30 +37,7 @@ void exclusaoCliente(TipoListaCliente *lista){
             system("cls");
             tela();
             telaCliente();
-
-            gotoxy(11,9);
-            printf("%d", resultado->conteudo.id_cliente);
-
-            gotoxy(31,9);
-            printf("%s", resultado->conteudo.nome);
-
-            gotoxy(12,11);
-            printf("%s", resultado->conteudo.cpf);
-
-            gotoxy(55,11);
-            printf("%s", resultado->conteudo.telefone);
-
-            gotoxy(14,13);
-            printf("%s", resultado->conteudo.email);
-
-            gotoxy(17,15);
-            printf("%s", resultado->conteudo.endereco);
-
-            gotoxy(22,17);
-            printf("%s", resultado->conteudo.data_cadastro);
-
-            gotoxy(53,17);
-            printf("%d", resultado->conteudo.status);
+            dadosCliente(listaCliente, codigo);
 
 
             gotoxy(30,19);
@@ -69,12 +46,12 @@ void exclusaoCliente(TipoListaCliente *lista){
 
             if(exclusao == 's' || exclusao == 'S'){
 
-                if(resultado->conteudo.id_cliente == lista->primeiro->conteudo.id_cliente){
-                    if(lista->primeiro == lista->ultimo){ 
-                        p_auxiliar = lista->primeiro;
+                if(resultado->conteudo.id_cliente == listaCliente->primeiro->conteudo.id_cliente){
+                    if(listaCliente->primeiro == listaCliente->ultimo){ 
+                        p_auxiliar = listaCliente->primeiro;
 
-                        lista->primeiro = NULL;
-                        lista->ultimo = NULL;
+                        listaCliente->primeiro = NULL;
+                        listaCliente->ultimo = NULL;
                         free(p_auxiliar);
 
                         limpa_msg();
@@ -86,12 +63,12 @@ void exclusaoCliente(TipoListaCliente *lista){
 
 
                     }else {
-                        p_auxiliar = lista->primeiro;
-                        lista->primeiro = lista->primeiro->proximo;
+                        p_auxiliar = listaCliente->primeiro;
+                        listaCliente->primeiro = listaCliente->primeiro->proximo;
                         free(p_auxiliar);
                     }           
-                } else if(resultado->conteudo.id_cliente == lista->ultimo->conteudo.id_cliente){
-                    p_auxiliar = lista->primeiro;
+                } else if(resultado->conteudo.id_cliente == listaCliente->ultimo->conteudo.id_cliente){
+                    p_auxiliar = listaCliente->primeiro;
                     r_auxiliar = p_auxiliar->proximo;
 
                     while(r_auxiliar->proximo != NULL){
@@ -99,11 +76,11 @@ void exclusaoCliente(TipoListaCliente *lista){
                         r_auxiliar = r_auxiliar->proximo;
                     }
 
-                    lista->ultimo = p_auxiliar;
-                    lista->ultimo->proximo = NULL;
+                    listaCliente->ultimo = p_auxiliar;
+                    listaCliente->ultimo->proximo = NULL;
                     free(r_auxiliar);
                 } else {
-                    p_auxiliar = lista->primeiro;
+                    p_auxiliar = listaCliente->primeiro;
                     r_auxiliar = p_auxiliar->proximo;
 
                     while(r_auxiliar != NULL && r_auxiliar->conteudo.id_cliente != resultado->conteudo.id_cliente){

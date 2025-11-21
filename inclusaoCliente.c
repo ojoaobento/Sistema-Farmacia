@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void inclusaoCliente(TipoListaCliente *lista){
+void inclusaoCliente(TipoListaCliente *listaCliente){
     
     ApontadorCliente novoCadastro;
     ApontadorCliente p_auxiliar;
@@ -19,10 +19,10 @@ void inclusaoCliente(TipoListaCliente *lista){
         do {
             limpa_msg();
 
-            gotoxy(11,9);
+            gotoxy(27,10);
             scanf("%d", &novoCadastro->conteudo.id_cliente);
 
-            p_auxiliar = lista->primeiro;
+            p_auxiliar = listaCliente->primeiro;
             verificacao = 0;
             while(p_auxiliar != NULL){
                 if(p_auxiliar != novoCadastro && p_auxiliar->conteudo.id_cliente == novoCadastro->conteudo.id_cliente){
@@ -43,33 +43,31 @@ void inclusaoCliente(TipoListaCliente *lista){
             }
         } while(verificacao == 1);
 
-        gotoxy(31,9);
+        gotoxy(27,11);
         fflush(stdin);
         fgets(novoCadastro->conteudo.nome,50,stdin);
 
-        gotoxy(12,11);
+        gotoxy(27,12);
         fflush(stdin);
         fgets(novoCadastro->conteudo.cpf,15,stdin);
 
-        gotoxy(55,11);
+        gotoxy(27,13);
         fflush(stdin);
         fgets(novoCadastro->conteudo.telefone,20,stdin);
 
-        gotoxy(14,13);
+        gotoxy(27,14);
         fflush(stdin);
         fgets(novoCadastro->conteudo.email,50,stdin);
 
-        gotoxy(17,15);
+        gotoxy(27,15);
         fflush(stdin);
         fgets(novoCadastro->conteudo.endereco,60,stdin);
 
-        gotoxy(22,17);
+        gotoxy(27,16);
         fflush(stdin);
         fgets(novoCadastro->conteudo.data_cadastro,19,stdin);
 
-        gotoxy(53,17);
-        scanf("%d", &novoCadastro->conteudo.status);
-
+        novoCadastro->conteudo.status = 1;
 
         gotoxy(30,19);
         printf("CONFIRMA INCLUSAO ( S/N ) ? ");
@@ -77,15 +75,18 @@ void inclusaoCliente(TipoListaCliente *lista){
 
         if(confirmacao == 's' || confirmacao == 'S'){
 
-            if(lista->primeiro == NULL){
-                lista->primeiro = novoCadastro;
-                lista->ultimo = novoCadastro;
+            if(listaCliente->primeiro == NULL){
+                listaCliente->primeiro = novoCadastro;
+                listaCliente->ultimo = novoCadastro;
                 novoCadastro->proximo = NULL;
             } else {
-                lista->ultimo->proximo = novoCadastro;
-                lista->ultimo = novoCadastro;
+                listaCliente->ultimo->proximo = novoCadastro;
+                listaCliente->ultimo = novoCadastro;
                 novoCadastro->proximo = NULL;
             }
+
+            gotoxy(27,17);
+            printf("1");
 
         } else {
             return;

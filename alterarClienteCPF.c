@@ -12,11 +12,11 @@ void alterarClienteCPF(TipoListaCliente *listaCliente, int codigo){
     gotoxy(2,23);
     printf("ALTERANDO CAMPO");
 
-    gotoxy(12,11);
-    printf("               ");
+    gotoxy(27,12);
+    printf("                                            ");
 
 
-    gotoxy(12,11);
+    gotoxy(27,12);
     fflush(stdin);
     fgets(temporaria.cpf,15,stdin);
 

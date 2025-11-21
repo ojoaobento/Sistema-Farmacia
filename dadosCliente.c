@@ -6,27 +6,27 @@ void dadosCliente(TipoListaCliente *listaCliente, int codigo){
 
     resultado = pesquisaCliente(listaCliente, codigo);
 
-    gotoxy(11,9);
+    gotoxy(27,10);
     printf("%d", resultado->conteudo.id_cliente);
 
-    gotoxy(31,9);
+    gotoxy(27,11);
     printf("%s", resultado->conteudo.nome);
 
-    gotoxy(12,11);
+    gotoxy(27,12);
     printf("%s", resultado->conteudo.cpf);
 
-    gotoxy(55,11);
+    gotoxy(27,13);
     printf("%s", resultado->conteudo.telefone);
 
-    gotoxy(14,13);
+    gotoxy(27,14);
     printf("%s", resultado->conteudo.email);
 
-    gotoxy(17,15);
+    gotoxy(27,15);
     printf("%s", resultado->conteudo.endereco);
 
-    gotoxy(22,17);
+    gotoxy(27,16);
     printf("%s", resultado->conteudo.data_cadastro);
 
-    gotoxy(53,17);
+    gotoxy(27,17);
     printf("%d", resultado->conteudo.status);
 }

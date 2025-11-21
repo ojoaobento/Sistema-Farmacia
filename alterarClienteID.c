@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void alterarClienteID(TipoListaCliente *listaCliente, int codigo){
+void alterarClienteID(TipoListaCliente *listaCliente, int *codigo){
 
     int codigoVerificacao;
     char alteracao;
@@ -8,17 +8,17 @@ void alterarClienteID(TipoListaCliente *listaCliente, int codigo){
     ApontadorCliente resultado;
     ApontadorCliente p_auxiliar;
 
-    resultado = pesquisaCliente(listaCliente, codigo);
+    resultado = pesquisaCliente(listaCliente, *codigo);
 
     do {
         limpa_msg();
         gotoxy(2,23);
         printf("ALTERANDO CAMPO");
 
-        gotoxy(11,9);
-        printf(" ");
+        gotoxy(27,10);
+        printf("      ");
 
-        gotoxy(11,9);
+        gotoxy(27,10);
         scanf("%d", &temporaria.id_cliente);
 
         p_auxiliar = listaCliente->primeiro;
@@ -29,15 +29,13 @@ void alterarClienteID(TipoListaCliente *listaCliente, int codigo){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("O CODIGO INSERIDO JA EXISTE, INSIRA OUTRO........");
-                codigoVerificacao = 1;
                 getch();
-
+                codigoVerificacao = 1;
                 break;
             }
-
             p_auxiliar = p_auxiliar->proximo;
         }
-    } while(codigoVerificacao == 1);
+    }while(codigoVerificacao == 1);
 
     gotoxy(30,19);
     printf("CONFIRMA ALTERACAO (S/N) ? ");
@@ -45,6 +43,7 @@ void alterarClienteID(TipoListaCliente *listaCliente, int codigo){
 
     if(alteracao == 's' || alteracao == 'S'){
         resultado->conteudo.id_cliente = temporaria.id_cliente;
+        *codigo = temporaria.id_cliente;
     } else {
         return;
     }

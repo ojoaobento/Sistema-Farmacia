@@ -11,10 +11,10 @@ void alterarClienteStatus(TipoListaCliente *listaCliente, int codigo){
     limpa_msg();
     gotoxy(2,23);
 
-    gotoxy(53,17);
-    printf(" ");
+    gotoxy(27,17);
+    printf("    ");
 
-    gotoxy(53,17);
+    gotoxy(27,17);
     scanf("%d", &temporaria.status);
 
     gotoxy(30,19);

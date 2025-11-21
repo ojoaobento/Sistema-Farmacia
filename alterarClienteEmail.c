@@ -11,10 +11,10 @@ void alterarClienteEmail(TipoListaCliente *listaCliente, int codigo){
     gotoxy(2,23);
     printf("ALTERANDO CAMPO");
 
-    gotoxy(14,13);
+    gotoxy(27,14);
     printf("                                                            ");
 
-    gotoxy(14,13);
+    gotoxy(27,14);
     fflush(stdin);
     fgets(temporaria.email,50,stdin);
 

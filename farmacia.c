@@ -7,10 +7,8 @@ int main(){
     listaCliente.primeiro = NULL;
     listaCliente.ultimo = NULL;
 
-    system("color 0F");
-    gotoxy();
+    system("color 02");
     tela();
-
     menuPrincipal(&listaCliente);
 
 }

@@ -13,10 +13,10 @@ void alterarClienteTelefone(TipoListaCliente *listaCliente, int codigo){
     gotoxy(2,23);
     printf("ALTERANDO CAMPO");
 
-    gotoxy(55,11);
+    gotoxy(27,13);
     printf("                    ");
 
-    gotoxy(55,11);
+    gotoxy(27,13);
     fflush(stdin);
     fgets(temporaria.telefone,20,stdin);
 
