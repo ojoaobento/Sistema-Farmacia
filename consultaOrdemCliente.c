@@ -7,10 +7,9 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
     int contador=0;
 
     system("cls");
-    tela();
     telaOrdemCliente();
 
-    ordernarCliente(listaCliente);
+    ordenarCliente(listaCliente);
 
     p_auxiliar = listaCliente->primeiro;
 
@@ -39,7 +38,7 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
         printf("%s", p_auxiliar->conteudo.data_cadastro);
 
         gotoxy(72,i);
-        printf("%s", p_auxiliar->conteudo.status);
+        printf("%d", p_auxiliar->conteudo.status);
 
         i++;
         contador++;
@@ -52,19 +51,16 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
             printf("SEGUIR PARA PROXIMA PAGINA....");
             getch();
             system("cls");
-            tela();
             telaOrdemCliente();
             i=7;
             contador=0;
         }
-
-        if(contador > 0){
-            limpa_msg();
-            gotoxy(2,23);
-            printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL.....");
-            getch();
-            return;            
-        }
     }
-
+    
+    limpa_msg();
+    gotoxy(2,23);
+    printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL.....");
+    getch();
+    return;            
+        
 }

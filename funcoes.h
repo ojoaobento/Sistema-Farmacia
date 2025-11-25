@@ -76,7 +76,7 @@ void telaOrdemCliente();
 
 void consultaOrdemCliente();
 
-void ordernarCliente();
+void ordenarCliente();
 
 
 #endif

@@ -12,7 +12,7 @@ void ordenarCliente(TipoListaCliente *listaCliente){
         r_auxiliar = p_auxiliar->proximo;
         trocou=0;
         while(r_auxiliar != NULL){
-            if(p_auxiliar->conteudo.id_cliente > p_auxiliar->conteudo.id_cliente){
+            if(p_auxiliar->conteudo.id_cliente > r_auxiliar->conteudo.id_cliente){
                 temporaria = p_auxiliar->conteudo;
                 p_auxiliar->conteudo = r_auxiliar->conteudo;
                 r_auxiliar->conteudo = temporaria;
