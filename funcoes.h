@@ -72,5 +72,11 @@ void consultaCliente();
 
 void dadosCliente();
 
+void telaOrdemCliente();
+
+void consultaOrdemCliente();
+
+void ordernarCliente();
+
 
 #endif

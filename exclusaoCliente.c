@@ -9,7 +9,6 @@ void exclusaoCliente(TipoListaCliente *listaCliente){
     char exclusao;
     char novaExclusao;
 
-
     do {
         system("cls");
         tela();
