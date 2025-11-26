@@ -7,6 +7,7 @@ void menuClientes(TipoListaCliente *listaCliente){
     do {
         system("cls");
         tela();
+        limpa_msg();
 
         gotoxy(33, 9);
         printf("CADASTRO DE CLIENTES");
@@ -50,19 +51,22 @@ void menuClientes(TipoListaCliente *listaCliente){
                 consultaOrdemCliente(listaCliente);
                 break;
             case 5:
-
+                inativarCliente(listaCliente);
                 break;
             case 6:
                 exclusaoCliente(listaCliente);
                 break;
             case 7:
-
+                return;
                 break;
             default:
-
+                system("cls");
+                tela();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, RETORNE AO MENU PRINCIPAL....");
+                getch();
+                return;
                 break;
-            
         }
-
-    }while(opcao != 5);
+    }while(opcao != 7);
 }

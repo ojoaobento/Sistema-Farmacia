@@ -78,5 +78,6 @@ void consultaOrdemCliente();
 
 void ordenarCliente();
 
+void inativarCliente();
 
 #endif

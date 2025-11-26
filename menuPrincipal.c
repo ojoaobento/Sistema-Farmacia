@@ -5,6 +5,10 @@ void menuPrincipal(TipoListaCliente *listaCliente){
     int opcao;
 
     do {
+        system("cls");
+        tela();
+        limpa_msg();
+
         gotoxy(35,12);
         printf("1- CLIENTES");
 
@@ -50,6 +54,5 @@ void menuPrincipal(TipoListaCliente *listaCliente){
 
                 break;
         }
-
     }while(opcao != 6);
 }
