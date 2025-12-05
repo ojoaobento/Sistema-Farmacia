@@ -80,4 +80,6 @@ void ordenarCliente();
 
 void inativarCliente();
 
+void removerLinha();
+
 #endif

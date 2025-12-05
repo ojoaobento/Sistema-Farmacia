@@ -43,9 +43,23 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
             }
         } while(verificacao == 1);
 
-        gotoxy(27,11);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.nome,50,stdin);
+        do {
+            gotoxy(2,23);
+            limpa_msg();
+
+            gotoxy(27,11);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.nome,50,stdin);
+            removerLinha(novoCadastro->conteudo.nome);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.nome) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO DE NOME.....");
+                verificacao = 1;
+                getch();
+            }
+        }while(verificacao != 0);
 
         gotoxy(27,12);
         fflush(stdin);

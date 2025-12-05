@@ -10,22 +10,22 @@ void menuPrincipal(TipoListaCliente *listaCliente){
         limpa_msg();
 
         gotoxy(35,12);
-        printf("1- CLIENTES");
+        printf("1 - CLIENTES");
 
         gotoxy(35,13);
-        printf("2- MEDICAMENTOS");
+        printf("2 - MEDICAMENTOS");
 
         gotoxy(35,14);
-        printf("3- FORNECEDORES");
+        printf("3 - FORNECEDORES");
 
         gotoxy(35,15);
-        printf("4- MOVIMENTACOES");
+        printf("4 - MOVIMENTACOES");
 
         gotoxy(35,16);
-        printf("5- RELATORIOS");
+        printf("5 - RELATORIOS");
 
         gotoxy(35,17);
-        printf("6- SAIR");
+        printf("6 - SAIR e SALVAR");
 
         gotoxy(35,19);
         printf("OPCAO: ");
