@@ -41,7 +41,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
                 }
                 p_auxiliar = p_auxiliar->proximo;
             }
-        } while(verificacao == 1);
+        }while(verificacao == 1);
 
         do {
             gotoxy(2,23);
@@ -61,26 +61,87 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
             }
         }while(verificacao != 0);
 
-        gotoxy(27,12);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.cpf,15,stdin);
+        do {
+            limpa_msg();
 
-        gotoxy(27,13);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.telefone,20,stdin);
+            gotoxy(27,12);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.cpf,15,stdin);
+            removerLinha(novoCadastro->conteudo.cpf);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.cpf) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO CPF.......");
+                verificacao=1;
+                getch();
+            }
+        }while(verificacao != 0);  
 
-        gotoxy(27,14);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.email,50,stdin);
+        do{ 
+            limpa_msg();
+            gotoxy(27,13);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.telefone,20,stdin);
+            removerLinha(novoCadastro->conteudo.telefone);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.telefone) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO TELEFONE......");
+                verificacao=1;
+                getch();
+            }
+        }while(verificacao != 0);
 
-        gotoxy(27,15);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.endereco,60,stdin);
+        do {
+            limpa_msg();
+            gotoxy(27,14);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.email,50,stdin);
+            removerLinha(novoCadastro->conteudo.email);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.email) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO EMAIL......");
+                verificacao=1;
+                getch();
+            }
+        }while(verificacao != 0);
 
-        gotoxy(27,16);
-        fflush(stdin);
-        fgets(novoCadastro->conteudo.data_cadastro,19,stdin);
+        do {
+            limpa_msg();
+            gotoxy(27,15);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.endereco,60,stdin);
+            removerLinha(novoCadastro->conteudo.endereco);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.endereco) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO ENDERECO......");
+                verificacao=1;
+                getch();
+            }
+        }while(verificacao != 0);
 
+        do {
+            limpa_msg();
+            gotoxy(27,16);
+            fflush(stdin);
+            fgets(novoCadastro->conteudo.data_cadastro,19,stdin);
+            removerLinha(novoCadastro->conteudo.data_cadastro);
+            verificacao=0;
+            if(strlen(novoCadastro->conteudo.data_cadastro) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO DATA DE CADASTRO......");
+                verificacao=1;
+                getch();
+            }
+        }while(verificacao != 0);
+        
         novoCadastro->conteudo.status = 1;
 
         gotoxy(30,19);
