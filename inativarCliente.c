@@ -33,6 +33,8 @@ void inativarCliente(TipoListaCliente *listaCliente){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("O CODIGO INSERIDO JA ESTA INATIVADO, RETORNE AO MENU PRINCIPAL...");
+                getch();
+                return;
             }
             system("cls");
             tela();

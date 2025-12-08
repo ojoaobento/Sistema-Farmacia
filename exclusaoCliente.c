@@ -40,7 +40,7 @@ void exclusaoCliente(TipoListaCliente *listaCliente){
 
 
             gotoxy(30,19);
-            printf("CONFIRMA EXCLUSAO ( S/N ) ?");
+            printf("CONFIRMA EXCLUSAO ( S/N ) ? ");
             scanf(" %c", &exclusao);
 
             if(exclusao == 's' || exclusao == 'S'){

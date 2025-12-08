@@ -17,8 +17,8 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
         telaCliente();
 
         do {
-            limpa_msg();
 
+            limpa_msg();
             gotoxy(27,10);
             scanf("%d", &novoCadastro->conteudo.id_cliente);
 
@@ -141,7 +141,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
                 getch();
             }
         }while(verificacao != 0);
-        
+
         novoCadastro->conteudo.status = 1;
 
         gotoxy(30,19);
