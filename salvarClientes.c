@@ -6,7 +6,7 @@ void salvarClientes(TipoListaCliente listaCliente){
 
     FILE *f = fopen("clientes.dat", "wb");
 
-    p = listaCliente->primeiro;
+    p = listaCliente.primeiro;
 
     while(p != NULL){
         fwrite(&p->conteudo, sizeof(reg_clientes),1,f);
