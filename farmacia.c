@@ -7,8 +7,12 @@ int main(){
     listaCliente.primeiro = NULL;
     listaCliente.ultimo = NULL;
 
+    carregarClientes(&listaCliente);
+
     system("color 02");
     tela();
     menuPrincipal(&listaCliente);
+
+    salvarClientes(listaCliente);
 
 }

@@ -82,4 +82,8 @@ void inativarCliente();
 
 void removerLinha();
 
+void salvarClientes();
+
+void carregarClientes();
+
 #endif

@@ -6,6 +6,18 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
     int i;
     int contador=0;
 
+
+
+    if(listaCliente->primeiro == NULL){
+        system("cls");
+        tela();
+        limpa_msg();
+        gotoxy(2,23);
+        printf("A SUA LISTA ESTA VAZIA RETORNE AO MENU PRINCIPAL......");
+        getch();
+        return;
+    }
+
     system("cls");
     telaOrdemCliente();
 

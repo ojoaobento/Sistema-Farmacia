@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void salvarClientes(TipoListaCliente *listaCliente){
+void salvarClientes(TipoListaCliente listaCliente){
     
     ApontadorCliente p;
 
