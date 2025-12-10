@@ -31,6 +31,29 @@ typedef struct{
     ApontadorCliente ultimo;
 }TipoListaCliente;
 
+typedef struct{
+    int id;
+    char nome[50];
+    char principio_ativo[50];
+    char validade[11];
+    char lote[20];
+    float preco;
+    int quantidade;
+    int status;
+}reg_medicamentos;
+
+typedef struct TipoMedicamento *ApontadorMedicamento;
+
+typedef struct TipoMedicamento{
+    reg_medicamentos conteudo;
+    ApontadorMedicamento proximo;
+}TipoMedicamento;
+
+typedef struct{
+    ApontadorMedicamento primeiro;
+    ApontadorMedicamento ultimo;
+}TipoListaMedicamento;
+
 
 void gotoxy();
 
@@ -85,5 +108,11 @@ void removerLinha();
 void salvarClientes();
 
 void carregarClientes();
+
+void menuMedicamentos();
+
+void inclusaoMedicamentos();
+
+void telaMedicamentos();
 
 #endif

@@ -19,6 +19,10 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
         do {
 
             limpa_msg();
+
+            gotoxy(27,10);
+            printf("               ");
+
             gotoxy(27,10);
             scanf("%d", &novoCadastro->conteudo.id_cliente);
 
