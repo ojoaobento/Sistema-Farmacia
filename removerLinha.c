@@ -2,7 +2,7 @@
 
 void removerLinha(char *letra){
     size_t len = strlen(letra);
-    if(len > 0 && letra[len-1 > 0] == '\n'){
+    if(len > 0 && letra[len-1] == '\n'){
         letra[len-1] = '\0';
     }
 }
