@@ -115,4 +115,10 @@ void inclusaoMedicamentos();
 
 void telaMedicamentos();
 
+void alterarMedicamentos();
+
+ApontadorMedicamento pesquisaMedicamento();
+
+void dadosMedicamento();
+
 #endif

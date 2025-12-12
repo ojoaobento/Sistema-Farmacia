@@ -42,7 +42,7 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
                 inclusaoMedicamentos(listaMedicamento);
                 break;
             case 2:
-
+                alterarMedicamentos(listaMedicamento);
                 break;
             case 3:
 
