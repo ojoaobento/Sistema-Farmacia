@@ -45,199 +45,28 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos){
 
             switch(opcao){
                 case 1:               
-                    do {
-                        limpa_msg();
-                        gotoxy(2,23);
-                        printf("ALTERANDO CAMPO......");
-                        
-                        gotoxy(30,10);
-                        printf("                   ");
-                        
-                        gotoxy(30,10);
-                        scanf("%d", &temporaria.id);
-                        verificacao=0;
-                        p_auxiliar = listaMedicamentos->primeiro;
-                        while(p_auxiliar != NULL){
-                            if(temporaria.id == p_auxiliar->conteudo.id){
-                                limpa_msg();
-                                gotoxy(2,23);
-                                printf("ESSE ID JA EXISTE, INSIRA OUTRO.....");
-                                verificacao=1;
-                                getch();
-                                break;
-                            }
-                            p_auxiliar = p_auxiliar->proximo;
-                        }
-
-                    }while(verificacao != 0);
                     
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        resultado->conteudo.id = temporaria.id;
-                    } else{
-                        return;
-                    }
                     break;
                 case 2:
-
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO......");
-
-                    gotoxy(30,11);
-                    printf("                                              ");
-
-                    gotoxy(30,11);
-                    fflush(stdin);
-                    fgets(temporaria.nome,50,stdin);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        strcpy(resultado->conteudo.nome, temporaria.nome);
-                    } else {
-                        return;
-                    }
-
+                    alterarMedicamentoNome(listaMedicamentos, codigo);
                     break;
                 case 3:
-                    
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO......");
-
-                    gotoxy(30,12);
-                    printf("                                                         ");
-
-                    gotoxy(30,12);
-                    fflush(stdin);
-                    fgets(temporaria.principio_ativo,50,stdin);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        strcpy(resultado->conteudo.principio_ativo, temporaria.principio_ativo);
-                    } else{
-                        return;
-                    }
+                    alterarMedicamentoPA(listaMedicamentos, codigo);
                     break;
                 case 4:
-
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO.....");
-
-                    gotoxy(30,13);
-                    printf("                                 ");
-                    
-                    gotoxy(30,13);
-                    fflush(stdin);
-                    fgets(temporaria.validade,11,stdin);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        strcpy(resultado->conteudo.validade, temporaria.validade);
-                    } else{
-                        return;
-                    }
+                    alterarMedicamentoValidade(listaMedicamentos, codigo);
                     break;
                 case 5:
-                    
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO......");
-
-                    gotoxy(30,14);
-                    printf("                                   ");
-
-                    gotoxy(30,14);
-                    fflush(stdin);
-                    fgets(temporaria.lote,20,stdin);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        strcpy(resultado->conteudo.lote, temporaria.lote);
-                    } else {
-                        return;
-                    }
-
+                    alterarMedicamentoLote(listaMedicamentos, codigo);
                     break;
                 case 6:
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO.....");
-
-                    gotoxy(30,15);
-                    printf("                  ");
-
-                    gotoxy(30,15);
-                    scanf("%f", &temporaria.preco);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        resultado->conteudo.preco = temporaria.preco;
-                    } else{
-                        return;
-                    }
+                    alterarMedicamentoPreco(listaMedicamentos, codigo);
                     break;
                 case 7:
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO.......");
-
-                    gotoxy(30,16);
-                    printf("              ");
-
-                    gotoxy(30,16);
-                    scanf("%d", &temporaria.quantidade);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        resultado->conteudo.quantidade = temporaria.quantidade;
-                    } else{
-                        return;
-                    }
+                    alterarMedicamentoQuantidade(listaMedicamentos, codigo);
                     break;
                 case 8:
-                    limpa_msg();
-                    gotoxy(2,23);
-                    printf("ALTERANDO CAMPO......");
-
-                    gotoxy(30,17);
-                    printf("                     ");
-
-                    gotoxy(30,17);
-                    scanf("%d", &temporaria.status);
-
-                    gotoxy(30,19);
-                    printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
-                    scanf(" %c", &confirmacao);
-
-                    if(confirmacao == 's' || confirmacao == 'S'){
-                        resultado->conteudo.status = temporaria.status;
-                    } else {
-                        return;
-                    }
-
+                    alterarMedicamentoStatus(listaMedicamentos, codigo);
                     break;
                 case 0:
                     return;

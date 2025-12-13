@@ -121,4 +121,18 @@ ApontadorMedicamento pesquisaMedicamento();
 
 void dadosMedicamento();
 
+void alterarMedicamentoNome();
+
+void alterarMedicamentoPA();
+
+void alterarMedicamentoValidade();
+
+void alterarMedicamentoLote();
+
+void alterarMedicamentoPreco();
+
+void alterarMedicamentoQuantidade();
+
+void alterarMedicamentoStatus();
+
 #endif
