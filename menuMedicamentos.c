@@ -45,7 +45,7 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
                 alterarMedicamentos(listaMedicamento);
                 break;
             case 3:
-
+                consultarMedicamento(listaMedicamento);
                 break;
             case 4:
 

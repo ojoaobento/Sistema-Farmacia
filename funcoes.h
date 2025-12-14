@@ -137,4 +137,6 @@ void alterarMedicamentoStatus();
 
 void alterarMedicamentoId();
 
+void consultarMedicamento();
+
 #endif
