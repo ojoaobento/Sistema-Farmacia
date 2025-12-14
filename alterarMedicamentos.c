@@ -45,7 +45,7 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos){
 
             switch(opcao){
                 case 1:               
-                    
+                    alterarMedicamentoId(listaMedicamentos, &codigo);
                     break;
                 case 2:
                     alterarMedicamentoNome(listaMedicamentos, codigo);
@@ -72,10 +72,13 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos){
                     return;
                     break;
                 default:
+                    system("cls");
+                    tela();
                     limpa_msg();
                     gotoxy(2,23);
                     printf("OPCAO INVALIDA, TENTE NOVAMENTE......");
                     getch();
+                    return;
                     break;
             }
             gotoxy(30,20);

@@ -135,4 +135,6 @@ void alterarMedicamentoQuantidade();
 
 void alterarMedicamentoStatus();
 
+void alterarMedicamentoId();
+
 #endif

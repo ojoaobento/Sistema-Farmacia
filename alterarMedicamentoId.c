@@ -1,13 +1,13 @@
 #include "funcoes.h"
 
-void alterarMedicamentoId(TipoListaMedicamento *listaMedicamentos, int codigo){
+void alterarMedicamentoId(TipoListaMedicamento *listaMedicamentos, int *codigo){
     int verificacao;
     ApontadorMedicamento resultado;
     ApontadorMedicamento p_auxiliar;
     reg_medicamentos temporaria;
     char confirmacao;
 
-    resultado = pesquisaMedicamento(listaMedicamentos, codigo);   
+    resultado = pesquisaMedicamento(listaMedicamentos, *codigo);   
 
     do {
         limpa_msg();
@@ -41,6 +41,7 @@ void alterarMedicamentoId(TipoListaMedicamento *listaMedicamentos, int codigo){
 
     if(confirmacao == 's' || confirmacao == 'S'){
         resultado->conteudo.id = temporaria.id;
+        *codigo = temporaria.id;
     } else{
         return;
     }   
