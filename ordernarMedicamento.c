@@ -10,7 +10,7 @@ void ordenarMedicamento(TipoListaMedicamento *listaMedicamento){
         p_auxiliar = listaMedicamento->primeiro;
         r_auxiliar = p_auxiliar->proximo;
         trocou=0;
-        while(p_auxiliar != NULL){
+        while(r_auxiliar != NULL){
             if(p_auxiliar->conteudo.id > r_auxiliar->conteudo.id){
                 temporaria = p_auxiliar->conteudo;
                 p_auxiliar->conteudo = r_auxiliar->conteudo;
