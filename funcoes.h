@@ -139,4 +139,10 @@ void alterarMedicamentoId();
 
 void consultarMedicamento();
 
+void consultaOrdemMedicamento();
+
+void telaOrdemMedicamento();
+
+void ordenarMedicamento();
+
 #endif

@@ -37,4 +37,5 @@ void consultarMedicamento(TipoListaMedicamento *listaMedicamento){
         scanf(" %c", &consulta);
 
     }while(consulta != 'n' && consulta != 'N'); 
+    return;
 }
