@@ -145,4 +145,6 @@ void telaOrdemMedicamento();
 
 void ordenarMedicamento();
 
+void inativarMedicamento();
+
 #endif

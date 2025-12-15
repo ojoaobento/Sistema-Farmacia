@@ -51,7 +51,7 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
                 consultaOrdemMedicamento(listaMedicamento);
                 break;
             case 5:
-
+                inativarMedicamento(listaMedicamento);
                 break;
             case 6:
 
