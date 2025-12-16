@@ -57,10 +57,15 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
                 exclusaoMedicamento(listaMedicamento);
                 break;
             case 7:
-
+                return;
                 break;
             default:
-
+                system("cls");
+                tela();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, RETORNE AO MENU PRINCIPAL.....");
+                getch();
+                return;
                 break;
         }
     }while(opcao != 7);

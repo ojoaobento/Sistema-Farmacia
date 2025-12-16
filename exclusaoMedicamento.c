@@ -57,9 +57,12 @@ void exclusaoMedicamento(TipoListaMedicamento *listaMedicamento){
                         listaMedicamento->ultimo = NULL;
                         free(p_auxiliar);
 
+
+                        system("cls");
+                        tela();
                         limpa_msg();
                         gotoxy(2,23);
-                        printf("O SISTEMA DE CADASTRO ESTA VAZIO, VOLTE AO MENU PRINCIPAL.....");
+                        printf("NAO EXISTE MAIS NENHUMA EXCLUSAO, VOLTE AO MENU PRINCIPAL.....");
                         getch();
                         return;
 
