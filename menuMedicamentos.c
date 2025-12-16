@@ -54,7 +54,7 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
                 inativarMedicamento(listaMedicamento);
                 break;
             case 6:
-
+                exclusaoMedicamento(listaMedicamento);
                 break;
             case 7:
 

@@ -147,4 +147,6 @@ void ordenarMedicamento();
 
 void inativarMedicamento();
 
+void exclusaoMedicamento();
+
 #endif
