@@ -149,4 +149,8 @@ void inativarMedicamento();
 
 void exclusaoMedicamento();
 
+void salvarMedicamentos();
+
+void carregarMedicamentos();
+
 #endif

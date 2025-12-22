@@ -20,6 +20,6 @@ int main(){
     menuPrincipal(&listaCliente, &listaMedicamento);
 
     salvarClientes(listaCliente);
-    salvarMedicamenots(listaMedicamento);
+    salvarMedicamentos(listaMedicamento);
 
 }
