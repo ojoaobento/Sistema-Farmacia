@@ -6,6 +6,19 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
     int i;
     int contador;
 
+
+
+    if(listaMedicamento->primeiro == NULL){
+        system("cls");
+        tela();
+
+        limpa_msg();
+        gotoxy(2,23);
+        printf("O SEU CADASTRO DE MEDICAMENTO ESTA VAZIO, RETORNE AO MENU PRINCIPAL.....");
+        getch();
+        return;
+    }
+
     system("cls");
 
     telaOrdemMedicamento();
@@ -26,16 +39,16 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
         gotoxy(30,i);
         printf("%s", p_auxiliar->conteudo.validade);
 
-        gotoxy(38,i);
+        gotoxy(43,i);
         printf("%s", p_auxiliar->conteudo.lote);
 
         gotoxy(53,i);
         printf("%.2f", p_auxiliar->conteudo.preco);
 
-        gotoxy(63,i);
+        gotoxy(64,i);
         printf("%d", p_auxiliar->conteudo.quantidade);
 
-        gotoxy(72,i);
+        gotoxy(75,i);
         printf("%d", p_auxiliar->conteudo.status);
 
         contador++;
