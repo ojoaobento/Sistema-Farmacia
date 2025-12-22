@@ -1,12 +1,10 @@
 #include "funcoes.h"
 
 void carregarClientes(TipoListaCliente *listaCliente){
-    ApontadorCliente p;
     ApontadorCliente novoElemento;
     reg_clientes temporaria;
-    FILE *f = fopen("clientes.dat", "rb");
 
-    p = listaCliente->primeiro;
+    FILE *f = fopen("clientes.dat", "rb");
 
     while(fread(&temporaria, sizeof(reg_clientes), 1, f) == 1){
         novoElemento = (ApontadorCliente) malloc(sizeof(TipoCliente));

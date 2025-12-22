@@ -13,11 +13,13 @@ int main(){
     listaMedicamento.ultimo = NULL;
 
     carregarClientes(&listaCliente);
+    carregarMedicamentos(&listaMedicamento);
 
     system("color 02");
     tela();
     menuPrincipal(&listaCliente, &listaMedicamento);
 
     salvarClientes(listaCliente);
+    salvarMedicamenots(listaMedicamento);
 
 }
