@@ -55,6 +55,29 @@ typedef struct{
 }TipoListaMedicamento;
 
 
+typedef struct{
+    int id;
+    char nome[50];
+    char cnpj[20];
+    char telefone[20];
+    char email[50];
+    int status;
+}reg_fornecedor;
+
+typedef struct TipoFornecedor *ApontadorFornecedor;
+
+typedef struct TipoFornecedor{
+    ApontadorFornecedor proximo;
+    ApontadorFornecedor anterior;
+    reg_fornecedor conteudo;
+}TipoFornecedor;
+
+typedef struct{
+    ApontadorFornecedor primeiro;
+    ApontadorFornecedor ultimo;
+}TipoListaFornecedor;
+
+
 void gotoxy();
 
 void tela();
