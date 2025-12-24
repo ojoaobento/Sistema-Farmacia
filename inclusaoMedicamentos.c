@@ -50,7 +50,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             fgets(novoElemento->conteudo.nome,50,stdin);
             verificacao=0;
             removerLinha(novoElemento->conteudo.nome);
-            if(strlen(novoElemento->conteudo.nome) == '\0'){
+            if(strlen(novoElemento->conteudo.nome) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO NOME.....");
@@ -70,7 +70,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             fgets(novoElemento->conteudo.principio_ativo,50,stdin);
             removerLinha(novoElemento->conteudo.principio_ativo);
             verificacao=0;
-            if(strlen(novoElemento->conteudo.principio_ativo) == '\0'){
+            if(strlen(novoElemento->conteudo.principio_ativo) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO PRINCIPIO ATIVO.......");
@@ -89,7 +89,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             fgets(novoElemento->conteudo.validade,11,stdin);
             removerLinha(novoElemento->conteudo.validade);
             verificacao=0;
-            if(strlen(novoElemento->conteudo.validade) == '\0'){
+            if(strlen(novoElemento->conteudo.validade) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO VALIDADE........");
@@ -108,7 +108,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             fgets(novoElemento->conteudo.lote,20,stdin);
             removerLinha(novoElemento->conteudo.lote);
             verificacao=0;
-            if(strlen(novoElemento->conteudo.lote) == '\0'){
+            if(strlen(novoElemento->conteudo.lote) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO LOTE.........");

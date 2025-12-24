@@ -41,7 +41,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             fgets(novoElemento->conteudo.nome,50,stdin);
             removerLinha(novoElemento->conteudo.nome);
             verificacao = 0;
-            if(strlen(novoElemento->conteudo.nome) == '\0'){
+            if(strlen(novoElemento->conteudo.nome) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO NOME.....");
@@ -57,7 +57,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             fgets(novoElemento->conteudo.cnpj,13,stdin);
             removerLinha(novoElemento->conteudo.cnpj);
             verificacao = 0;
-            if(strlen(novoElemento->conteudo.cnpj) == '\0'){
+            if(strlen(novoElemento->conteudo.cnpj) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO CNPJ....");
@@ -73,7 +73,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             fgets(novoElemento->conteudo.telefone,20,stdin);
             removerLinha(novoElemento->conteudo.telefone);
             verificacao=0;
-            if(strlen(novoElemento->conteudo.telefone) == '\0'){
+            if(strlen(novoElemento->conteudo.telefone) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO TELEFONE......");
@@ -89,7 +89,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             fgets(novoElemento->conteudo.email,50,stdin);
             removerLinha(novoElemento->conteudo.email);
             verificacao = 0;
-            if(strlen(novoElemento->conteudo.email) == '\0'){
+            if(strlen(novoElemento->conteudo.email) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO EMAIL.....");
