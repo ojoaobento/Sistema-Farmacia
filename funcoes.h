@@ -182,4 +182,8 @@ void telaFornecedor();
 
 void inclusaoFornecedor();
 
+void alterarFornecedor();
+
+ApontadorFornecedor pesquisaFornecedor();
+
 #endif

@@ -41,7 +41,7 @@ void menuFornecedores(TipoListaFornecedor *listaFornecedor){
                 inclusaoFornecedor(listaFornecedor);
                 break;
             case 2:
-
+                alterarFornecedor(listaFornecedor);
                 break;
             case 3:
 
