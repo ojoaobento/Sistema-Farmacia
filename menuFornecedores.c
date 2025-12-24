@@ -38,7 +38,7 @@ void menuFornecedores(TipoListaFornecedor *listaFornecedor){
 
         switch(opcao){
             case 1:
-
+                inclusaoFornecedor(listaFornecedor);
                 break;
             case 2:
 

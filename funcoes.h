@@ -58,7 +58,7 @@ typedef struct{
 typedef struct{
     int id;
     char nome[50];
-    char cnpj[20];
+    char cnpj[13];
     char telefone[20];
     char email[50];
     int status;
@@ -175,5 +175,11 @@ void exclusaoMedicamento();
 void salvarMedicamentos();
 
 void carregarMedicamentos();
+
+void menuFornecedores();
+
+void telaFornecedor();
+
+void inclusaoFornecedor();
 
 #endif

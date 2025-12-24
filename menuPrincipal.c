@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMedicamento){
+void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMedicamento, TipoListaFornecedor *listaFornecedor){
     
     int opcao;
 
@@ -39,7 +39,7 @@ void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMe
                 menuMedicamentos(listaMedicamento);
                 break;
             case 3:
-
+                menuFornecedores(listaFornecedor);
                 break;
             case 4:
 
