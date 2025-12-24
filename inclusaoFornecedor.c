@@ -12,7 +12,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
         system("cls");
         tela();
         telaFornecedor();
-        novoElemento = (ApontadorFornecedor) malloc(sizeof(reg_fornecedor));
+        novoElemento = (ApontadorFornecedor) malloc(sizeof(TipoFornecedor));
 
         do {
             limpa_msg();
@@ -54,7 +54,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             limpa_msg();
             gotoxy(21,13);
             fflush(stdin);
-            fgets(novoElemento->conteudo.cnpj,13,stdin);
+            fgets(novoElemento->conteudo.cnpj,15,stdin);
             removerLinha(novoElemento->conteudo.cnpj);
             verificacao = 0;
             if(strlen(novoElemento->conteudo.cnpj) == 0){
@@ -111,8 +111,6 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
                 listaFornecedor->primeiro = novoElemento;
                 listaFornecedor->ultimo = novoElemento;
 
-                gotoxy(21,16);
-                printf("1");
 
             }else{
                 novoElemento->proximo = NULL;
@@ -120,6 +118,10 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
                 listaFornecedor->ultimo->proximo = novoElemento;
                 listaFornecedor->ultimo = novoElemento;   
             }
+
+            gotoxy(21,16);
+            printf("1");
+            
         }
         gotoxy(30,20);
         printf("NOVA INCLUSAO ( S/N ) ? ");

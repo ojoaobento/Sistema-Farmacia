@@ -58,7 +58,7 @@ typedef struct{
 typedef struct{
     int id;
     char nome[50];
-    char cnpj[13];
+    char cnpj[15];
     char telefone[20];
     char email[50];
     int status;
