@@ -199,4 +199,7 @@ void alterarFornecedorTelefone();
 void alterarFornecedorEmail();
 
 void alterarFornecedorStatus();
+
+void consultaFornecedor();
+
 #endif
