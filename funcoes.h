@@ -186,4 +186,17 @@ void alterarFornecedor();
 
 ApontadorFornecedor pesquisaFornecedor();
 
+void dadosFornecedor();
+
+void alterarFornecedorId();
+
+void alterarFornecedorNome();
+
+void alterarFornecedorCnpj();
+
+void alterarFornecedorTelefone();
+
+void alterarFornecedorEmail();
+
+void alterarFornecedorStatus();
 #endif
