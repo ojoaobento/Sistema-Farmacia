@@ -8,6 +8,11 @@ void alterarFornecedorEmail(TipoListaFornecedor *listaFornecedor, int codigo){
 
     resultado = pesquisaFornecedor(listaFornecedor, codigo);
 
+
+    limpa_msg();
+    gotoxy(2,23);
+    printf("ALTERANDO CAMPO.....");
+
     gotoxy(21,15);
     printf("                                                  ");
 

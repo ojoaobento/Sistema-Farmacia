@@ -11,7 +11,11 @@ void alterarFornecedorId(TipoListaFornecedor *listaFornecedor, int *codigo){
     resultado = pesquisaFornecedor(listaFornecedor, *codigo);
 
     do {
+
         limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO.....");
+        
         gotoxy(21,11);
         printf("              ");
 
