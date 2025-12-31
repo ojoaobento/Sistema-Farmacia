@@ -47,7 +47,7 @@ void menuFornecedores(TipoListaFornecedor *listaFornecedor){
                 consultaFornecedor(listaFornecedor);
                 break;
             case 4:
-
+                consultaOrdemFornecedor(listaFornecedor);
                 break;
             case 5:
 

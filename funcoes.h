@@ -206,4 +206,6 @@ void telaOrdemFornecedor();
 
 void ordenarFornecedor();
 
+void consultaOrdemFornecedor();
+
 #endif
