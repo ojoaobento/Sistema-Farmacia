@@ -202,4 +202,8 @@ void alterarFornecedorStatus();
 
 void consultaFornecedor();
 
+void telaOrdemFornecedor();
+
+void ordenarFornecedor();
+
 #endif
