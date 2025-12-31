@@ -7,6 +7,17 @@ void consultaOrdemFornecedor(TipoListaFornecedor *listaFornecedor){
     int contador;
 
 
+    if(listaFornecedor->primeiro == NULL){
+        system("cls");
+        tela();
+        limpa_msg();
+        gotoxy(2,23);
+        printf("OS FORNECEDORES ESTAO VAZIOS, VOLTE AO MENU PRINCIPAL.....");
+        getch();
+        return;
+    }
+
+
     system("cls");
     telaOrdemFornecedor();
     ordenarFornecedor(listaFornecedor);

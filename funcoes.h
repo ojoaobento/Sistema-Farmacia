@@ -208,4 +208,6 @@ void ordenarFornecedor();
 
 void consultaOrdemFornecedor();
 
+void inativarFornecedor();
+
 #endif
