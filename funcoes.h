@@ -210,4 +210,6 @@ void consultaOrdemFornecedor();
 
 void inativarFornecedor();
 
+void exclusaoFornecedor();
+
 #endif

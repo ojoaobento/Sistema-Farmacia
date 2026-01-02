@@ -19,7 +19,6 @@ void inativarFornecedor(TipoListaFornecedor *listaFornecedor){
             return;
         }
 
-
         system("cls");
         tela();
 

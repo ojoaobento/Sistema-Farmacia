@@ -53,7 +53,7 @@ void menuFornecedores(TipoListaFornecedor *listaFornecedor){
                 inativarFornecedor(listaFornecedor);
                 break;
             case 6:
-
+                exclusaoFornecedor(listaFornecedor);
                 break;
             case 7:
 
