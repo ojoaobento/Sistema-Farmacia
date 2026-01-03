@@ -18,6 +18,7 @@ int main(){
 
     carregarClientes(&listaCliente);
     carregarMedicamentos(&listaMedicamento);
+    carregarFornecedor(&listaFornecedor);
 
     system("color 02");
     tela();
@@ -25,5 +26,6 @@ int main(){
 
     salvarClientes(listaCliente);
     salvarMedicamentos(listaMedicamento);
+    salvarFornecedor(listaFornecedor);
 
 }

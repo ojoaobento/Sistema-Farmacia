@@ -212,4 +212,8 @@ void inativarFornecedor();
 
 void exclusaoFornecedor();
 
+void salvarFornecedor();
+
+void carregarFornecedor();
+
 #endif
