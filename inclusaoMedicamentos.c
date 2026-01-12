@@ -42,6 +42,8 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
             while(r_auxiliar != NULL){
                 if(r_auxiliar->conteudo.id == temporaria.id_fornecedor){
                     novoElemento->conteudo.id_fornecedor = temporaria.id_fornecedor;
+                    gotoxy(32,10);
+                    printf(" - %s", r_auxiliar->conteudo.nome);
                     verificacao=1;
                     break;
                 }
