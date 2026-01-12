@@ -33,6 +33,7 @@ typedef struct{
 
 typedef struct{
     int id;
+    int id_fornecedor;
     char nome[50];
     char principio_ativo[50];
     char validade[11];
@@ -215,5 +216,7 @@ void exclusaoFornecedor();
 void salvarFornecedor();
 
 void carregarFornecedor();
+
+void alterarMedicamentoIdFornecedor();
 
 #endif

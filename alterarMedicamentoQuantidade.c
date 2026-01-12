@@ -12,10 +12,10 @@ void alterarMedicamentoQuantidade(TipoListaMedicamento *listaMedicamentos, int c
     gotoxy(2,23);
     printf("ALTERANDO CAMPO.......");
 
-    gotoxy(30,16);
+    gotoxy(30,17);
     printf("              ");
 
-    gotoxy(30,16);
+    gotoxy(30,17);
     scanf("%d", &temporaria.quantidade);
 
     gotoxy(30,19);

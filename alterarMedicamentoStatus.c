@@ -12,10 +12,10 @@ void alterarMedicamentoStatus(TipoListaMedicamento *listaMedicamentos, int codig
     gotoxy(2,23);
     printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,17);
+    gotoxy(30,18);
     printf("                     ");
 
-    gotoxy(30,17);
+    gotoxy(30,18);
     scanf("%d", &temporaria.status);
 
     gotoxy(30,19);

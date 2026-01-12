@@ -13,10 +13,10 @@ void alterarMedicamentoNome(TipoListaMedicamento *listaMedicamentos, int codigo)
     gotoxy(2,23);
     printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,11);
+    gotoxy(30,12);
     printf("                                              ");
 
-    gotoxy(30,11);
+    gotoxy(30,12);
     fflush(stdin);
     fgets(temporaria.nome,50,stdin);
 

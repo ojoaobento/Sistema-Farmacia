@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos){
+void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos, TipoListaFornecedor *listaFornecedor){
     
     int codigo;
     int opcao;
@@ -40,32 +40,35 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos){
 
             limpa_msg();
             gotoxy(2,23);
-            printf("ALTERAR(1-ID,2-NOME,3-PA,4-VAL,5-LOTE,6-PRECO,7-QUANT,8-STATUS,0-SAIR): ");
+            printf("ALTERAR(1-ID-F,2-ID-M,3-NOME,4-PA,5-VAL,6-LOTE,7-PRECO,8-QUANT,9-STATUS,0-SAIR): ");
             scanf("%d", &opcao);
 
             switch(opcao){
                 case 1:               
-                    alterarMedicamentoId(listaMedicamentos, &codigo);
+                    alterarMedicamentoIdFornecedor(listaMedicamentos, listaFornecedor, codigo);
                     break;
                 case 2:
-                    alterarMedicamentoNome(listaMedicamentos, codigo);
+                    alterarMedicamentoId(listaMedicamentos, &codigo);
                     break;
                 case 3:
-                    alterarMedicamentoPA(listaMedicamentos, codigo);
+                    alterarMedicamentoNome(listaMedicamentos, codigo);
                     break;
                 case 4:
-                    alterarMedicamentoValidade(listaMedicamentos, codigo);
+                    alterarMedicamentoPA(listaMedicamentos, codigo);
                     break;
                 case 5:
-                    alterarMedicamentoLote(listaMedicamentos, codigo);
+                    alterarMedicamentoValidade(listaMedicamentos, codigo);
                     break;
                 case 6:
-                    alterarMedicamentoPreco(listaMedicamentos, codigo);
+                    alterarMedicamentoLote(listaMedicamentos, codigo);
                     break;
                 case 7:
-                    alterarMedicamentoQuantidade(listaMedicamentos, codigo);
+                    alterarMedicamentoPreco(listaMedicamentos, codigo);
                     break;
                 case 8:
+                    alterarMedicamentoQuantidade(listaMedicamentos, codigo);
+                    break;
+                case 9:
                     alterarMedicamentoStatus(listaMedicamentos, codigo);
                     break;
                 case 0:

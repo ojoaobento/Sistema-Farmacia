@@ -4,8 +4,7 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
 
     ApontadorMedicamento p_auxiliar;
     int i;
-    int contador;
-
+    int contador=0;
 
 
     if(listaMedicamento->primeiro == NULL){
@@ -27,16 +26,20 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
     i=7;
     p_auxiliar = listaMedicamento->primeiro;
     while(p_auxiliar != NULL){
+
         gotoxy(3,i);
+        printf("%d", p_auxiliar->conteudo.id_fornecedor);
+
+        gotoxy(8,i);
         printf("%d", p_auxiliar->conteudo.id);
 
-        gotoxy(9,i);
+        gotoxy(15,i);
         printf("%s", p_auxiliar->conteudo.nome);
 
-        gotoxy(20,i);
+        gotoxy(23,i);
         printf("%s", p_auxiliar->conteudo.principio_ativo);
 
-        gotoxy(30,i);
+        gotoxy(32,i);
         printf("%s", p_auxiliar->conteudo.validade);
 
         gotoxy(43,i);

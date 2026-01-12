@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
+void menuMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaFornecedor *listaFornecedor){
 
     int opcao;
 
@@ -39,10 +39,10 @@ void menuMedicamentos(TipoListaMedicamento *listaMedicamento){
 
         switch(opcao){
             case 1:
-                inclusaoMedicamentos(listaMedicamento);
+                inclusaoMedicamentos(listaMedicamento,listaFornecedor);
                 break;
             case 2:
-                alterarMedicamentos(listaMedicamento);
+                alterarMedicamentos(listaMedicamento, listaFornecedor);
                 break;
             case 3:
                 consultarMedicamento(listaMedicamento);

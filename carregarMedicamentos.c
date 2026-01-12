@@ -8,7 +8,7 @@ void carregarMedicamentos(TipoListaMedicamento *listaMedicamento){
     FILE *f = fopen("medicamentos.dat", "rb");
 
     while(fread(&temporaria, sizeof(reg_medicamentos), 1 , f) == 1){
-        novoElemento = (ApontadorMedicamento) malloc(sizeof(reg_medicamentos));
+        novoElemento = (ApontadorMedicamento) malloc(sizeof(TipoMedicamento));
         novoElemento->conteudo = temporaria;
         novoElemento->proximo = NULL;
 

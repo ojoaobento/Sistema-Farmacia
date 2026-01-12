@@ -14,10 +14,10 @@ void alterarMedicamentoId(TipoListaMedicamento *listaMedicamentos, int *codigo){
         gotoxy(2,23);
         printf("ALTERANDO CAMPO......");
 
-        gotoxy(30,10);
+        gotoxy(30,11);
         printf("                   ");
 
-        gotoxy(30,10);
+        gotoxy(30,11);
         scanf("%d", &temporaria.id);
         verificacao=0;
         p_auxiliar = listaMedicamentos->primeiro;

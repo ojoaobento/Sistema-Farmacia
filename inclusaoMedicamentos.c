@@ -1,14 +1,27 @@
 #include "funcoes.h"
 
-void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
+void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaFornecedor *listaFornecedor){
 
     ApontadorMedicamento novoElemento;
     ApontadorMedicamento p_auxiliar;
+    ApontadorFornecedor r_auxiliar;
+    reg_medicamentos temporaria;
     char confirmacao;
     char inclusao;
     int verificacao;
     
     do {
+
+        if(listaFornecedor->primeiro == NULL){
+            system("cls");
+            tela();
+            limpa_msg();
+            gotoxy(2,23);
+            printf("OS FORNECEDORES ESTAO VAZIOS, EFETIVE O CADASTRO DELES PARA PROSSEGUIR.....");
+            getch();
+            return;
+        }
+
         system("cls");
         tela();
         telaMedicamentos();
@@ -23,6 +36,35 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             printf("            ");
 
             gotoxy(30,10);
+            scanf("%d", &temporaria.id_fornecedor);
+            r_auxiliar = listaFornecedor->primeiro;
+            verificacao = 0;
+            while(r_auxiliar != NULL){
+                if(r_auxiliar->conteudo.id == temporaria.id_fornecedor){
+                    novoElemento->conteudo.id_fornecedor = temporaria.id_fornecedor;
+                    verificacao=1;
+                    break;
+                }
+                r_auxiliar = r_auxiliar->proximo;
+            }
+
+            if(verificacao == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("O ID INSERIDO NAO EXISTE, TENTE OUTRO.....");
+                getch();
+            }
+
+        }while(verificacao != 1);
+
+        do {
+
+            limpa_msg();
+
+            gotoxy(30,11);
+            printf("            ");
+
+            gotoxy(30,11);
             scanf("%d", &novoElemento->conteudo.id);
 
             verificacao=0;
@@ -42,10 +84,10 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
 
         do {
             limpa_msg();
-            gotoxy(30,11);
+            gotoxy(30,12);
             printf("                         ");
 
-            gotoxy(30,11);
+            gotoxy(30,12);
             fflush(stdin);
             fgets(novoElemento->conteudo.nome,50,stdin);
             verificacao=0;
@@ -62,10 +104,10 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
 
         do {
             limpa_msg();
-            gotoxy(30,12);
+            gotoxy(30,13);
             printf("                                                 ");
 
-            gotoxy(30,12);
+            gotoxy(30,13);
             fflush(stdin);
             fgets(novoElemento->conteudo.principio_ativo,50,stdin);
             removerLinha(novoElemento->conteudo.principio_ativo);
@@ -81,10 +123,10 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
 
         do {
             limpa_msg();
-            gotoxy(30,13);
+            gotoxy(30,14);
             printf("                                ");
 
-            gotoxy(30,13);
+            gotoxy(30,14);
             fflush(stdin);
             fgets(novoElemento->conteudo.validade,11,stdin);
             removerLinha(novoElemento->conteudo.validade);
@@ -100,10 +142,10 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
 
         do {
             limpa_msg();
-            gotoxy(30,14);
+            gotoxy(30,15);
             printf("                                         ");
 
-            gotoxy(30,14);
+            gotoxy(30,15);
             fflush(stdin);
             fgets(novoElemento->conteudo.lote,20,stdin);
             removerLinha(novoElemento->conteudo.lote);
@@ -117,10 +159,10 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
             }
         }while(verificacao != 0);
 
-        gotoxy(30,15);
+        gotoxy(30,16);
         scanf("%f", &novoElemento->conteudo.preco);
 
-        gotoxy(30,16);
+        gotoxy(30,17);
         scanf("%d", &novoElemento->conteudo.quantidade);
 
         novoElemento->conteudo.status = 1;
@@ -135,7 +177,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento){
                 listaMedicamento->primeiro = novoElemento;
                 listaMedicamento->ultimo = novoElemento;
 
-                gotoxy(30,17);
+                gotoxy(30,18);
                 printf("1");
 
             } else {
