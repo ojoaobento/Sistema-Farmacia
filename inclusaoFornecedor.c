@@ -7,6 +7,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
     char confirmacao;
     char inclusao;
     int verificacao;
+    int outraVerificacao;
 
     do {
         system("cls");
@@ -48,23 +49,35 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
                 verificacao = 1;
                 getch();
             }
+
         }while(verificacao != 0);   
 
         do {
+
+            gotoxy(21,13);
+            printf("                                ");
+
             limpa_msg();
             gotoxy(21,13);
             fflush(stdin);
             fgets(novoElemento->conteudo.cnpj,15,stdin);
             removerLinha(novoElemento->conteudo.cnpj);
             verificacao = 0;
+            outraVerificacao=0;
             if(strlen(novoElemento->conteudo.cnpj) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO CNPJ....");
                 verificacao = 1;
                 getch();
+            }else if(strlen(novoElemento->conteudo.cnpj) != 14){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("CNPJ INVALIDO, INSIRA NOVAMENTE.........");
+                outraVerificacao=1;
+                getch();
             }
-        }while(verificacao != 0);
+        }while(verificacao != 0 || outraVerificacao != 0);
 
         do{ 
             limpa_msg();
