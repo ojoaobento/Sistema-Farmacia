@@ -242,4 +242,8 @@ void alterarMedicamentoIdFornecedor();
 
 void menuMovimentacao();
 
+void telaMovimentacao();
+
+void compraMedicamento();
+
 #endif

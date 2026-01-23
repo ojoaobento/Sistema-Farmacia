@@ -42,7 +42,7 @@ void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMe
                 menuFornecedores(listaFornecedor);
                 break;
             case 4:
-                menuMovimentacao(listaMovimentacao);
+                menuMovimentacao(listaMovimentacao, listaCliente, listaMedicamento);
                 break;
             case 5:
 
