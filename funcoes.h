@@ -246,4 +246,8 @@ void telaMovimentacao();
 
 void compraMedicamento();
 
+void salvarCompras();
+
+void carregarCompras();
+
 #endif
