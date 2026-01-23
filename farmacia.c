@@ -26,7 +26,7 @@ int main(){
 
     system("color 02");
     tela();
-    menuPrincipal(&listaCliente, &listaMedicamento, &listaFornecedor);
+    menuPrincipal(&listaCliente, &listaMedicamento, &listaFornecedor,&listaMovimentacao);
 
     salvarClientes(listaCliente);
     salvarMedicamentos(listaMedicamento);

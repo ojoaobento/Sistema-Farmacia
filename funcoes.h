@@ -240,4 +240,6 @@ void carregarFornecedor();
 
 void alterarMedicamentoIdFornecedor();
 
+void menuMovimentacao();
+
 #endif
