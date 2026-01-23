@@ -19,7 +19,6 @@ void alterarClienteData(TipoListaCliente *listaCliente, int codigo){
     fflush(stdin);
     fgets(temporaria.data_cadastro,19,stdin);
 
-
     gotoxy(30,19);
     printf("CONFIRMA ALTERACAO ( S/N ) ? ");
     scanf(" %c", &alteracao);

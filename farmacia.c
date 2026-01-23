@@ -6,6 +6,7 @@ int main(){
     TipoListaCliente listaCliente;
     TipoListaMedicamento listaMedicamento;
     TipoListaFornecedor listaFornecedor;
+    TipoListaMovimentacao listaMovimentacao;
 
     listaCliente.primeiro = NULL;
     listaCliente.ultimo = NULL;
@@ -15,6 +16,9 @@ int main(){
 
     listaFornecedor.primeiro = NULL;
     listaFornecedor.ultimo = NULL;
+
+    listaMovimentacao.primeiro = NULL;
+    listaMovimentacao.ultimo = NULL;
 
     carregarClientes(&listaCliente);
     carregarMedicamentos(&listaMedicamento);

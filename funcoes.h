@@ -78,6 +78,27 @@ typedef struct{
     ApontadorFornecedor ultimo;
 }TipoListaFornecedor;
 
+typedef struct{
+    int cd_cliente;
+    int cd_medicamento;
+    int quantidade;
+    float valor;
+    float valor_total;
+    char dt_compra[11];
+}reg_movimentacoes;
+
+typedef struct TipoMovimentacao *ApontadorMovimentacao;
+
+typedef struct TipoMovimentacao{
+    reg_movimentacoes conteudo;
+    ApontadorMovimentacao proximo;
+}TipoMovimentacao;
+
+typedef struct{
+    ApontadorMovimentacao primeiro;
+    ApontadorMovimentacao ultimo;
+}TipoListaMovimentacao;
+
 
 void gotoxy();
 
