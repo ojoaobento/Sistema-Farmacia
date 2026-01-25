@@ -13,7 +13,7 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
 
 
     gotoxy(32,12);
-    printf("1 - COMPRAS MEDICAMENTOS");
+    printf("1 - COMPRAS");
 
     gotoxy(32,13);
     printf("2 - REPOSICAO ESTOQUE");
@@ -27,13 +27,13 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
 
     switch(opcao){
         case 1:
-            compraMedicamento(listaMovimentacao, listaCliente, listaMedicamento);
+            menuCompras(listaMovimentacao, listaCliente, listaMedicamento);          
             break;
         case 2:
-            return;
+
             break;
         case 3:
-
+            return;
             break;
         default:
 

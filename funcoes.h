@@ -250,4 +250,12 @@ void salvarCompras();
 
 void carregarCompras();
 
+void menuCompras();
+
+void telaOrdemCompras();
+
+void ordenarCompras();
+
+void consultarCompras();
+
 #endif
