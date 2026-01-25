@@ -4,39 +4,39 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
 
     int opcao;
 
+    do {
+        system("cls");
+        tela();
 
-    system("cls");
-    tela();
+        gotoxy(36,9);
+        printf("MOVIMENTACOES");
 
-    gotoxy(36,9);
-    printf("MOVIMENTACOES");
+        gotoxy(32,12);
+        printf("1 - COMPRAS");
 
+        gotoxy(32,13);
+        printf("2 - REPOSICAO ESTOQUE");
 
-    gotoxy(32,12);
-    printf("1 - COMPRAS");
+        gotoxy(32,14);
+        printf("3 - RETORNAR");
 
-    gotoxy(32,13);
-    printf("2 - REPOSICAO ESTOQUE");
+        gotoxy(37,16);
+        printf("OPCAO : ");
+        scanf("%d", &opcao);
 
-    gotoxy(32,14);
-    printf("3 - RETORNAR");
+        switch(opcao){
+            case 1:
+                menuCompras(listaMovimentacao, listaCliente, listaMedicamento);          
+                break;
+            case 2:
 
-    gotoxy(37,16);
-    printf("OPCAO : ");
-    scanf("%d", &opcao);
+                break;
+            case 3:
+                return;
+                break;
+            default:
 
-    switch(opcao){
-        case 1:
-            menuCompras(listaMovimentacao, listaCliente, listaMedicamento);          
-            break;
-        case 2:
-
-            break;
-        case 3:
-            return;
-            break;
-        default:
-
-            break;
-    }
+                break;
+        }
+    }while(opcao != 3); 
 }
