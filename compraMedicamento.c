@@ -8,7 +8,7 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
     ApontadorMedicamento r;
     ApontadorMedicamento t;
     int verificacao;
-    int valorTotal;
+    float valorTotal;
     char novaCompra;
     char confirmar;
 
@@ -61,7 +61,7 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
             verificacao = 0;
             r = listaMedicamento->primeiro;
             while(r != NULL){
-                if(temporaria.cd_medicamento == r->conteudo.id && r->conteudo.status == 1){
+                if(temporaria.cd_medicamento == r->conteudo.id && r->conteudo.status == 1 && r->conteudo.quantidade > 0){
                     novo->conteudo.cd_medicamento = temporaria.cd_medicamento;
                     verificacao=1;
                     gotoxy(38,11);
@@ -74,7 +74,7 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
             if(verificacao == 0){
                 limpa_msg();
                 gotoxy(2,23);
-                printf("O CODIGO INSERIDO NAO EXISTE OU ESTA INATIVO, INSIRA OUTRO........");
+                printf("MEDICAMENTO INVALIDO OU SEM ESTOQUE, INSIRA OUTRO......");
                 getch();
             }
 
@@ -128,6 +128,9 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
                 listaMovimentacao->ultimo->proximo = novo;
                 listaMovimentacao->ultimo = novo;
             }
+
+            t->conteudo.quantidade -= novo->conteudo.quantidade;
+
         }else{
             free(novo);
             return;
