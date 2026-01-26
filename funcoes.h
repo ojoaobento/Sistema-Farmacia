@@ -280,4 +280,10 @@ void movimentacaoEstoque();
 
 void menuReposicao();
 
+void telaConsultaMovimentacao();
+
+void ordenarRegistros();
+
+void consultarRegistrosMovimentacao();
+
 #endif

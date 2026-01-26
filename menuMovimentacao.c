@@ -35,7 +35,13 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
                 return;
                 break;
             default:
-
+                system("cls");
+                tela();
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, VOLTE AO MENU PRINCIPAL.....");
+                getch();
+                return;
                 break;
         }
     }while(opcao != 3); 

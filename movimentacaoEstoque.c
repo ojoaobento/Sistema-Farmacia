@@ -162,6 +162,7 @@ void movimentacaoEstoque(TipoListaMedicamento *listaMedicamento, TipoListaEstoqu
             listaEstoque->ultimo = estoque;
             listaEstoque->ultimo->proximo = NULL;
         }
+        
         limpa_msg();
         gotoxy(2,23);
         printf("NOVA MOVIMENTACAO ( S/N ) ? ");

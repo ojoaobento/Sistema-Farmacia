@@ -25,13 +25,19 @@ void menuReposicao(TipoListaMedicamento *listaMedicamento, TipoListaEstoque *lis
                 movimentacaoEstoque(listaMedicamento, listaEstoque);
                 break;
             case 2:
-
+                consultarRegistrosMovimentacao(listaEstoque);
                 break;
             case 3:
                 return;
                 break;
             default:
-
+                system("cls");
+                tela();
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, VOLTE AO MENU PRINCIPAL.....");
+                getch();
+                return;
                 break;
         }
 
