@@ -196,8 +196,6 @@ void alterarMedicamentoLote();
 
 void alterarMedicamentoPreco();
 
-void alterarMedicamentoQuantidade();
-
 void alterarMedicamentoStatus();
 
 void alterarMedicamentoId();
@@ -278,7 +276,7 @@ void ordenarCompras();
 
 void consultarCompras();
 
-void reposicaoEstoque();
+void movimentacaoEstoque();
 
 void menuReposicao();
 

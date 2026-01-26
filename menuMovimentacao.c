@@ -15,7 +15,7 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
         printf("1 - COMPRAS");
 
         gotoxy(32,13);
-        printf("2 - REPOSICAO");
+        printf("2 - MOVIMENTAR ESTOQUE");
 
         gotoxy(32,14);
         printf("3 - RETORNAR");

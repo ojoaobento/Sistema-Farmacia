@@ -40,7 +40,7 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos, TipoListaForne
 
             limpa_msg();
             gotoxy(2,23);
-            printf("ALTERAR(1-ID-F,2-ID-M,3-NOME,4-PA,5-VAL,6-LOT,7-PRC,8-QNT,9-STA,0-SAIR): ");
+            printf("ALTERAR(1-ID-F,2-ID-M,3-NOME,4-PA,5-VAL,6-LOT,7-PRC,8-STA,0-SAIR): ");
             scanf("%d", &opcao);
 
             switch(opcao){
@@ -66,9 +66,6 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos, TipoListaForne
                     alterarMedicamentoPreco(listaMedicamentos, codigo);
                     break;
                 case 8:
-                    alterarMedicamentoQuantidade(listaMedicamentos, codigo);
-                    break;
-                case 9:
                     alterarMedicamentoStatus(listaMedicamentos, codigo);
                     break;
                 case 0:

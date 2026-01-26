@@ -8,10 +8,10 @@ void menuReposicao(TipoListaMedicamento *listaMedicamento, TipoListaEstoque *lis
         tela();
 
         gotoxy(32,12);
-        printf("1 - REPOSICAO ESTOQUE");
+        printf("1 - MOVIMENTAR ESTOQUE");
 
         gotoxy(32,13);
-        printf("2 - CONSULTAR REGISTROS DE ESTOQUE");
+        printf("2 - CONSULTAR REGISTROS DE MOVIMENTACAO");
 
         gotoxy(32,14);
         printf("3 - RETORNAR");
@@ -22,7 +22,7 @@ void menuReposicao(TipoListaMedicamento *listaMedicamento, TipoListaEstoque *lis
 
         switch(opcao){
             case 1:
-                reposicaoEstoque(listaMedicamento, listaEstoque);
+                movimentacaoEstoque(listaMedicamento, listaEstoque);
                 break;
             case 2:
 

@@ -29,5 +29,4 @@ void telaMedicamentos(){
 
     gotoxy(7,18);
     printf("STATUS...............: ");
-
 }
