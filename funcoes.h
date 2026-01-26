@@ -100,6 +100,26 @@ typedef struct{
 }TipoListaMovimentacao;
 
 
+typedef struct{
+    int id_medicamento;
+    int tipo_reposicao;
+    int quantidade;
+    char data[11];
+}reg_estoque;
+
+typedef struct TipoEstoque *ApontadorEstoque;
+
+typedef struct TipoEstoque{
+    reg_estoque conteudo;
+    ApontadorEstoque proximo;
+}TipoEstoque;
+
+typedef struct{
+    ApontadorEstoque primeiro;
+    ApontadorEstoque ultimo;
+}TipoListaEstoque;
+
+
 void gotoxy();
 
 void tela();
@@ -257,5 +277,9 @@ void telaOrdemCompras();
 void ordenarCompras();
 
 void consultarCompras();
+
+void reposicaoEstoque();
+
+void menuReposicao();
 
 #endif

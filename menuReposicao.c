@@ -1,21 +1,17 @@
 #include "funcoes.h"
 
-void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente *listaCliente, TipoListaMedicamento *listaMedicamento, TipoListaEstoque *listaEstoque){
+void menuReposicao(TipoListaMedicamento *listaMedicamento, TipoListaEstoque *listaEstoque){
 
     int opcao;
-
-    do {
+    do{
         system("cls");
         tela();
 
-        gotoxy(36,9);
-        printf("MOVIMENTACOES");
-
         gotoxy(32,12);
-        printf("1 - COMPRAS");
+        printf("1 - REPOSICAO ESTOQUE");
 
         gotoxy(32,13);
-        printf("2 - REPOSICAO");
+        printf("2 - CONSULTAR REGISTROS DE ESTOQUE");
 
         gotoxy(32,14);
         printf("3 - RETORNAR");
@@ -26,10 +22,10 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
 
         switch(opcao){
             case 1:
-                menuCompras(listaMovimentacao, listaCliente, listaMedicamento);          
+                reposicaoEstoque(listaMedicamento, listaEstoque);
                 break;
             case 2:
-                menuReposicao(listaMedicamento, listaEstoque);
+
                 break;
             case 3:
                 return;
@@ -38,5 +34,6 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
 
                 break;
         }
-    }while(opcao != 3); 
+
+    }while(opcao != 3);
 }
