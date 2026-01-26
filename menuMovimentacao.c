@@ -20,7 +20,7 @@ void menuMovimentacao(TipoListaMovimentacao *listaMovimentacao, TipoListaCliente
         gotoxy(32,14);
         printf("3 - RETORNAR");
 
-        gotoxy(37,16);
+        gotoxy(32,16);
         printf("OPCAO : ");
         scanf("%d", &opcao);
 

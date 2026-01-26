@@ -33,7 +33,7 @@ void menuClientes(TipoListaCliente *listaCliente){
         gotoxy(35,18);
         printf("7 - RETORNAR");
 
-        gotoxy(37,20);
+        gotoxy(35,20);
         printf("OPCAO: ");
         scanf("%d", &opcao);
 
