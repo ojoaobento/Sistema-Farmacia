@@ -45,7 +45,7 @@ void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMe
                 menuMovimentacao(listaMovimentacao, listaCliente, listaMedicamento, listaEstoque);
                 break;
             case 5:
-
+                menuRelatorio(listaMedicamento, listaMovimentacao);
                 break;
             case 6:
 

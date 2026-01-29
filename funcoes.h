@@ -292,4 +292,8 @@ void carregarEstoque();
 
 void menuRelatorio();
 
+void telaBalancoAcervo();
+
+void balancoAcervo();
+
 #endif

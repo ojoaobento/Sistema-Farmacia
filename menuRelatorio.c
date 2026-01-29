@@ -1,33 +1,41 @@
 #include "funcoes.h"
 
-void menuRelatorio(){
+void menuRelatorio(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao *listaMovimentacao){
 
     int opcao;
 
+    do {
+        system("cls");
+        tela();
 
-    system("cls");
-    tela();
+        gotoxy(32,12);
+        printf("1 - BALANCO DO ACERVO");
 
-    gotoxy(32,12);
-    printf("1 - BALANCO DO ACERVO");
+        gotoxy(32,13);
+        printf("2 - BALANCO DAS MOVIMENTACOES");
 
-    gotoxy(32,13);
-    printf("2 - BALANCO DAS MOVIMENTACOES");
+        gotoxy(32,14);
+        printf("3 - RETORNAR");
 
 
-    gotoxy(32,15);
-    printf("OPCAO : ");
-    scanf("%d", &opcao);
+        gotoxy(32,16);
+        printf("OPCAO : ");
+        scanf("%d", &opcao);
 
-    switch(opcao){
-        case 1:
+        switch(opcao){
+            case 1:
+                balancoAcervo(listaMedicamento, listaMovimentacao);
+                break;
+            case 2:
 
-            break;
-        case 2:
+                break;
+            case 3:
+                return;
+                break;
+            default:
 
-            break;
-        default:
+                break;
+        }
 
-            break;
-    }
+    } while(opcao != 3);
 }
