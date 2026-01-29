@@ -286,4 +286,8 @@ void ordenarRegistros();
 
 void consultarRegistrosMovimentacao();
 
+void salvarEstoque();
+
+void carregarEstoque();
+
 #endif

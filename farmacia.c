@@ -28,6 +28,7 @@ int main(){
     carregarMedicamentos(&listaMedicamento);
     carregarFornecedor(&listaFornecedor);
     carregarCompras(&listaMovimentacao);
+    carregarEstoque(&listaEstoque);
 
     system("color 02");
     tela();
@@ -37,5 +38,6 @@ int main(){
     salvarMedicamentos(listaMedicamento);
     salvarFornecedor(listaFornecedor);
     salvarCompras(listaMovimentacao);
+    salvarEstoque(listaEstoque);
 
 }
