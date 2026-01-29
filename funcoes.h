@@ -290,4 +290,6 @@ void salvarEstoque();
 
 void carregarEstoque();
 
+void menuRelatorio();
+
 #endif

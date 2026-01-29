@@ -11,6 +11,7 @@ void salvarEstoque(TipoListaEstoque listaEstoque){
 
     while(p != NULL){
         fwrite(&p->conteudo,sizeof(reg_estoque),1,f);
+        p = p->proximo;
     }
 
     fclose(f);
