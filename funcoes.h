@@ -296,4 +296,6 @@ void telaBalancoAcervo();
 
 void balancoAcervo();
 
+void limparFiltro();
+
 #endif

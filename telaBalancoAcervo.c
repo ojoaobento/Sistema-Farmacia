@@ -30,6 +30,16 @@ void telaBalancoAcervo(){
     gotoxy(45,5); printf("ESTOQUE");
     gotoxy(68,5); printf("VENDIDO");
 
+
+    gotoxy(61,19);
+    printf("[1] MOSTRAR TODOS");
+
+    gotoxy(61,20);
+    printf("[2] SEM VENDAS");
+
+    gotoxy(61,21);
+    printf("[0] SAIR");
+
     gotoxy(2, 23);
     printf("MSG:");
 
