@@ -8,6 +8,7 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
     int cont=0;
     int totalVendido;
     int opcao;
+    int todosVendido=1;
 
     system("cls");
     telaBalancoAcervo();
@@ -48,13 +49,13 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                 printf("%d", p->conteudo.quantidade);
 
                 r = listaMovimentacao->primeiro;
-
                 while(r != NULL){
                     if(p->conteudo.id == r->conteudo.cd_medicamento){
                         totalVendido += r->conteudo.quantidade;
                     }
                     r = r->proximo;
                 }
+
 
                 gotoxy(68,i);
                 printf("%d", totalVendido);
@@ -94,6 +95,9 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                 }
 
                 if(totalVendido == 0){
+
+                    todosVendido=0;
+
                     gotoxy(3,i);
                     printf("%d", p->conteudo.id);
 
@@ -121,6 +125,16 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                     }
                 }
                 p = p->proximo;
+            }
+
+            if(todosVendido == 1){
+                system("cls");
+                tela();
+                limpa_msg();
+                gotoxy(2,23);
+                printf("TODOS MEDICAMENTOS FORAM VENDIDOS....");
+                getch();
+                return;
             }
 
             break;
