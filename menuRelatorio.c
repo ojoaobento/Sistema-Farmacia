@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menuRelatorio(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao *listaMovimentacao){
+void menuRelatorio(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao *listaMovimentacao, TipoListaCliente *listaCliente){
 
     int opcao;
 
@@ -27,7 +27,7 @@ void menuRelatorio(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                 balancoAcervo(listaMedicamento, listaMovimentacao);
                 break;
             case 2:
-
+                balancoMovimentacao(listaCliente,listaMedicamento, listaMovimentacao);
                 break;
             case 3:
                 return;

@@ -152,5 +152,4 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
     getch();
     return;
 
-
 }

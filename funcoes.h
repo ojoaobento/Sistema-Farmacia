@@ -298,4 +298,10 @@ void balancoAcervo();
 
 void limparFiltro();
 
+void balancoMovimentacao();
+
+void telaBalancoMovimentacao();
+
+void telaRanking();
+
 #endif
