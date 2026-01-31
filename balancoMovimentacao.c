@@ -1,15 +1,17 @@
 #include "funcoes.h"
 
-void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao *listaMovimentacao){
+void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao *listaMovimentacao, TipoListaRanking *listaRanking){
 
     ApontadorCliente r;
     ApontadorMedicamento p;
     ApontadorMovimentacao t;
+    ApontadorRanking novo;
     int contC=0;
     int contM=0;
     int contV=0;
     int contSV=0;
     int verificacao;
+    int quantidade_vendida;
 
     
     system("cls");
@@ -64,6 +66,38 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
     printf("SEGUIR PARA PROXIMA PAGINA....");
     getch();
     system("cls");
+    telaRanking();
+
+    p = listaMedicamento->primeiro;
+    while(p != NULL){
+        t = listaMovimentacao->primeiro;
+        quantidade_vendida=0;
+        novo = (ApontadorRanking) malloc(sizeof(TipoRanking));
+        novo->conteudo.id = p->conteudo.id;
+        strcpy(novo->conteudo.nome_medicamento, p->conteudo.nome);
+
+        while(t != NULL){
+            if(t->conteudo.cd_medicamento == p->conteudo.id){
+                quantidade_vendida += t->conteudo.quantidade;
+            }
+            t = t->proximo;
+        }
+        novo->conteudo.quantidade_vendida = quantidade_vendida;
+
+        if(listaRanking->primeiro == NULL){
+            listaRanking->primeiro = novo;
+            listaRanking->ultimo = novo;
+            listaRanking->ultimo->proximo = NULL;
+        }else{
+            listaRanking->ultimo->proximo = novo;
+            listaRanking->ultimo = novo;
+            listaRanking->ultimo->proximo = NULL;
+        }
+
+        p = p->proximo;
+    }
+
+    ordenarRanking(listaRanking);
     
     
     getch();

@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMedicamento, TipoListaFornecedor *listaFornecedor, TipoListaMovimentacao *listaMovimentacao, TipoListaEstoque *listaEstoque){
+void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMedicamento, TipoListaFornecedor *listaFornecedor, TipoListaMovimentacao *listaMovimentacao, TipoListaEstoque *listaEstoque, TipoListaRanking *listaRanking){
     
     int opcao;
 
@@ -45,7 +45,7 @@ void menuPrincipal(TipoListaCliente *listaCliente, TipoListaMedicamento *listaMe
                 menuMovimentacao(listaMovimentacao, listaCliente, listaMedicamento, listaEstoque);
                 break;
             case 5:
-                menuRelatorio(listaMedicamento, listaMovimentacao, listaCliente);
+                menuRelatorio(listaMedicamento, listaMovimentacao, listaCliente, listaRanking);
                 break;
             case 6:
 

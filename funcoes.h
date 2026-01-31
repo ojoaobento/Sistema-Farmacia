@@ -119,6 +119,25 @@ typedef struct{
     ApontadorEstoque ultimo;
 }TipoListaEstoque;
 
+typedef struct{
+    int id;
+    char nome_medicamento[50];
+    int quantidade_vendida;
+}reg_ranking;
+
+typedef struct TipoRanking *ApontadorRanking;
+
+typedef struct TipoRanking{
+    ApontadorRanking proximo;
+    reg_ranking conteudo;
+}TipoRanking;
+
+typedef struct{
+    ApontadorRanking primeiro;
+    ApontadorRanking ultimo;
+}TipoListaRanking;
+
+
 
 void gotoxy();
 
@@ -303,5 +322,7 @@ void balancoMovimentacao();
 void telaBalancoMovimentacao();
 
 void telaRanking();
+
+void ordenarRanking();
 
 #endif

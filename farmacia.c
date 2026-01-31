@@ -8,6 +8,7 @@ int main(){
     TipoListaFornecedor listaFornecedor;
     TipoListaMovimentacao listaMovimentacao;
     TipoListaEstoque listaEstoque;
+    TipoListaRanking listaRanking;
 
     listaCliente.primeiro = NULL;
     listaCliente.ultimo = NULL;
@@ -24,6 +25,9 @@ int main(){
     listaEstoque.primeiro = NULL;
     listaEstoque.ultimo = NULL;
 
+    listaRanking.primeiro = NULL;
+    listaRanking.ultimo = NULL;
+
     carregarClientes(&listaCliente);
     carregarMedicamentos(&listaMedicamento);
     carregarFornecedor(&listaFornecedor);
@@ -32,7 +36,7 @@ int main(){
 
     system("color 02");
     tela();
-    menuPrincipal(&listaCliente, &listaMedicamento, &listaFornecedor,&listaMovimentacao, &listaEstoque);
+    menuPrincipal(&listaCliente, &listaMedicamento, &listaFornecedor,&listaMovimentacao, &listaEstoque, &listaRanking);
 
     salvarClientes(listaCliente);
     salvarMedicamentos(listaMedicamento);
