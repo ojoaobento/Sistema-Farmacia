@@ -6,10 +6,13 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
     ApontadorMedicamento p;
     ApontadorMovimentacao t;
     ApontadorRanking novo;
+    ApontadorRanking h;
     int contC=0;
     int contM=0;
     int contV=0;
     int contSV=0;
+    int i;
+    int cont=0;
     int verificacao;
     int quantidade_vendida;
 
@@ -72,9 +75,6 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
     while(p != NULL){
         t = listaMovimentacao->primeiro;
         quantidade_vendida=0;
-        novo = (ApontadorRanking) malloc(sizeof(TipoRanking));
-        novo->conteudo.id = p->conteudo.id;
-        strcpy(novo->conteudo.nome_medicamento, p->conteudo.nome);
 
         while(t != NULL){
             if(t->conteudo.cd_medicamento == p->conteudo.id){
@@ -82,24 +82,54 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
             }
             t = t->proximo;
         }
-        novo->conteudo.quantidade_vendida = quantidade_vendida;
 
-        if(listaRanking->primeiro == NULL){
-            listaRanking->primeiro = novo;
-            listaRanking->ultimo = novo;
-            listaRanking->ultimo->proximo = NULL;
-        }else{
-            listaRanking->ultimo->proximo = novo;
-            listaRanking->ultimo = novo;
-            listaRanking->ultimo->proximo = NULL;
+        if(quantidade_vendida > 0){
+            novo = (ApontadorRanking) malloc(sizeof(TipoRanking));
+            novo->conteudo.id = p->conteudo.id;
+            strcpy(novo->conteudo.nome_medicamento, p->conteudo.nome);
+            novo->conteudo.quantidade_vendida = quantidade_vendida;
+
+            if(listaRanking->primeiro == NULL){
+                listaRanking->primeiro = novo;
+                listaRanking->ultimo = novo;
+                listaRanking->ultimo->proximo = NULL;
+            }else{
+                listaRanking->ultimo->proximo = novo;
+                listaRanking->ultimo = novo;
+                listaRanking->ultimo->proximo = NULL;
+            }
         }
 
         p = p->proximo;
     }
 
     ordenarRanking(listaRanking);
-    
-    
-    getch();
 
+    
+    i=11;
+    h = listaRanking->primeiro;
+
+    while(h != NULL && cont<=10){
+        gotoxy(3,i);
+        printf("%d", h->conteudo.id);
+
+        gotoxy(32,i);
+        printf("%s", h->conteudo.nome_medicamento);
+
+        gotoxy(67,i);
+        printf("%d", h->conteudo.quantidade_vendida);
+
+        cont++;
+        i++;
+        h = h->proximo;
+    }
+
+    esvaziarRanking(listaRanking);
+
+    limpa_msg();
+    gotoxy(2,23);
+    printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL...");
+
+    getch();
+    return;
 }

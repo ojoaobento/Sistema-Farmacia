@@ -325,4 +325,6 @@ void telaRanking();
 
 void ordenarRanking();
 
+void esvaziarRanking();
+
 #endif
