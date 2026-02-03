@@ -28,6 +28,7 @@ int main(){
     listaRanking.primeiro = NULL;
     listaRanking.ultimo = NULL;
 
+
     carregarClientes(&listaCliente);
     carregarMedicamentos(&listaMedicamento);
     carregarFornecedor(&listaFornecedor);

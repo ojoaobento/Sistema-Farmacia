@@ -3,8 +3,12 @@
 void consultaOrdemCliente(TipoListaCliente *listaCliente){
     
     ApontadorCliente p_auxiliar;
+    ApontadorCliente pagina[100];
     int i;
     int contador=0;
+    int paginaAtual=0;
+    char opcao;
+    int avancar=1;
 
 
 
@@ -18,57 +22,84 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
         return;
     }
 
-    system("cls");
-    telaOrdemCliente();
-
     ordenarCliente(listaCliente);
 
-    p_auxiliar = listaCliente->primeiro;
+    pagina[0] = listaCliente->primeiro;
 
-    i=7;
-    while(p_auxiliar != NULL){
+    while(avancar){
+        system("cls");
+        telaOrdemCliente();
 
-        gotoxy(3,i);
-        printf("%d", p_auxiliar->conteudo.id_cliente);
+        p_auxiliar = pagina[paginaAtual];
+        i=7;
+        contador=0;
 
-        gotoxy(9,i);
-        printf("%s", p_auxiliar->conteudo.nome);
+        while(p_auxiliar != NULL && contador < 12){
 
-        gotoxy(20,i);
-        printf("%s", p_auxiliar->conteudo.cpf);
+            gotoxy(3,i);
+            printf("%d", p_auxiliar->conteudo.id_cliente);
 
-        gotoxy(30,i);
-        printf("%s", p_auxiliar->conteudo.telefone);
+            gotoxy(9,i);
+            printf("%s", p_auxiliar->conteudo.nome);
 
-        gotoxy(38,i);
-        printf("%s", p_auxiliar->conteudo.email);
+            gotoxy(20,i);
+            printf("%s", p_auxiliar->conteudo.cpf);
 
-        gotoxy(53,i);
-        printf("%s", p_auxiliar->conteudo.endereco);
+            gotoxy(30,i);
+            printf("%s", p_auxiliar->conteudo.telefone);
 
-        gotoxy(63,i);
-        printf("%s", p_auxiliar->conteudo.data_cadastro);
+            gotoxy(38,i);
+            printf("%s", p_auxiliar->conteudo.email);
 
-        gotoxy(72,i);
-        printf("%d", p_auxiliar->conteudo.status);
+            gotoxy(53,i);
+            printf("%s", p_auxiliar->conteudo.endereco);
 
-        i++;
-        contador++;
-        p_auxiliar = p_auxiliar->proximo;
+            gotoxy(63,i);
+            printf("%s", p_auxiliar->conteudo.data_cadastro);
 
-        if(contador == 7){
+            gotoxy(72,i);
+            printf("%d", p_auxiliar->conteudo.status);
 
-            limpa_msg();
-            gotoxy(2,23);
-            printf("SEGUIR PARA PROXIMA PAGINA....");
-            getch();
-            system("cls");
-            telaOrdemCliente();
-            i=7;
-            contador=0;
+            i++;
+            contador++;
+            p_auxiliar = p_auxiliar->proximo;
         }
-    }
-    
+
+
+
+        limpa_msg();
+        gotoxy(2,23);
+        printf("[P] PROXIMA - [A] ANTERIOR - [S] SAIR : ");
+        scanf(" %c", &opcao);
+
+        switch(opcao){
+            case 'P':  
+            case 'p':
+                if(p_auxiliar != NULL && paginaAtual < 99){
+                    paginaAtual++;
+                    pagina[paginaAtual] = p_auxiliar;
+                }
+                break;
+            case 'A':
+            case 'a':
+                if(paginaAtual > 0){
+                        paginaAtual--;
+                }
+                break;
+            case 'S':
+            case 's':
+                return;
+                break;
+            default:
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, INSIRA NOVAMENTE......");
+                getch();
+                break;
+            }
+    }  
+
+
     limpa_msg();
     gotoxy(2,23);
     printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL.....");

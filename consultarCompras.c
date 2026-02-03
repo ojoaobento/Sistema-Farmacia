@@ -46,7 +46,7 @@ void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
         i++;
         cont++;
 
-        if(cont == 7){   
+        if(cont == 12){   
             limpa_msg();
             gotoxy(2,23);
             printf("SIGA PARA PROXIMA PAGINA.....");

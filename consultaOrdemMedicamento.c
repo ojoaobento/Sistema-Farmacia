@@ -3,8 +3,12 @@
 void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
 
     ApontadorMedicamento p_auxiliar;
+    ApontadorMedicamento pagina[100];
+    int paginaAtual=0;
+    char opcao;
     int i;
     int contador=0;
+    int avancar=1;
 
 
     if(listaMedicamento->primeiro == NULL){
@@ -18,58 +22,86 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
         return;
     }
 
-    system("cls");
 
-    telaOrdemMedicamento();
     ordenarMedicamento(listaMedicamento);
 
-    i=7;
-    p_auxiliar = listaMedicamento->primeiro;
-    while(p_auxiliar != NULL){
+    pagina[0] = listaMedicamento->primeiro;
 
-        gotoxy(3,i);
-        printf("%d", p_auxiliar->conteudo.id_fornecedor);
+    while(avancar){
+        system("cls");
+        telaOrdemMedicamento();
+        i=7;
+        contador=0;
+        p_auxiliar = pagina[paginaAtual];
 
-        gotoxy(8,i);
-        printf("%d", p_auxiliar->conteudo.id);
+        while(p_auxiliar != NULL){
 
-        gotoxy(15,i);
-        printf("%s", p_auxiliar->conteudo.nome);
+            gotoxy(3,i);
+            printf("%d", p_auxiliar->conteudo.id_fornecedor);
 
-        gotoxy(23,i);
-        printf("%s", p_auxiliar->conteudo.principio_ativo);
+            gotoxy(8,i);
+            printf("%d", p_auxiliar->conteudo.id);
 
-        gotoxy(32,i);
-        printf("%s", p_auxiliar->conteudo.validade);
+            gotoxy(15,i);
+            printf("%s", p_auxiliar->conteudo.nome);
 
-        gotoxy(43,i);
-        printf("%s", p_auxiliar->conteudo.lote);
+            gotoxy(23,i);
+            printf("%s", p_auxiliar->conteudo.principio_ativo);
 
-        gotoxy(53,i);
-        printf("%.2f", p_auxiliar->conteudo.preco);
+            gotoxy(32,i);
+            printf("%s", p_auxiliar->conteudo.validade);
 
-        gotoxy(64,i);
-        printf("%d", p_auxiliar->conteudo.quantidade);
+            gotoxy(43,i);
+            printf("%s", p_auxiliar->conteudo.lote);
 
-        gotoxy(75,i);
-        printf("%d", p_auxiliar->conteudo.status);
+            gotoxy(53,i);
+            printf("%.2f", p_auxiliar->conteudo.preco);
 
-        contador++;
-        i++;
-        p_auxiliar = p_auxiliar->proximo;
+            gotoxy(64,i);
+            printf("%d", p_auxiliar->conteudo.quantidade);
 
-        if(contador == 7){
-            limpa_msg();
-            gotoxy(2,23);
-            printf("SEGUIR PARA PROXIMA PAGINA.....");
-            getch();
+            gotoxy(75,i);
+            printf("%d", p_auxiliar->conteudo.status);
 
-            system("cls");
-            telaOrdemMedicamento();
-            i=7;
-            contador=0;
+            contador++;
+            i++;
+            p_auxiliar = p_auxiliar->proximo;
         }
+
+        limpa_msg();
+        gotoxy(2,23);
+        printf("[P] PROXIMA - [A] ANTERIOR - [S] SAIR : ");  
+        scanf(" %c", &opcao);
+
+        switch(opcao){
+            case 'P':
+            case 'p':
+                if(p_auxiliar != NULL && paginaAtual < 99){
+                    paginaAtual++;
+                    pagina[paginaAtual] = p_auxiliar;
+                }
+                break;
+            case 'A':
+            case 'a':
+                if(paginaAtual > 0){
+                    paginaAtual--;
+                }
+                break;
+            case 'S':
+            case 's':
+                return;
+                break;
+            default:
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, INSIRA NOVAMENTE......");
+                getch();
+                break;
+        }
+
+
     }
+
 
     limpa_msg();
     gotoxy(2,23);
