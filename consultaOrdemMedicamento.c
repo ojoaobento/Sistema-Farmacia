@@ -10,7 +10,6 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
     int contador=0;
     int avancar=1;
 
-
     if(listaMedicamento->primeiro == NULL){
         system("cls");
         tela();
@@ -22,9 +21,7 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
         return;
     }
 
-
     ordenarMedicamento(listaMedicamento);
-
     pagina[0] = listaMedicamento->primeiro;
 
     while(avancar){
@@ -34,7 +31,7 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
         contador=0;
         p_auxiliar = pagina[paginaAtual];
 
-        while(p_auxiliar != NULL){
+        while(p_auxiliar != NULL && contador < 12){
 
             gotoxy(3,i);
             printf("%d", p_auxiliar->conteudo.id_fornecedor);
