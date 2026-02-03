@@ -98,14 +98,5 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
                 getch();
                 break;
         }
-
-
     }
-
-
-    limpa_msg();
-    gotoxy(2,23);
-    printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL.....");
-    getch();
-    return;
 }
