@@ -135,6 +135,9 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             gotoxy(21,16);
             printf("1");
             
+        }else{
+            free(novoElemento);
+            return;
         }
         gotoxy(30,20);
         printf("NOVA INCLUSAO ( S/N ) ? ");

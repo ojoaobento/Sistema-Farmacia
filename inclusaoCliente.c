@@ -177,6 +177,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
             printf("1");
 
         } else {
+            free(novoCadastro);
             return;
         }
 

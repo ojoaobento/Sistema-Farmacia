@@ -188,6 +188,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
                 listaMedicamento->ultimo = novoElemento;
             }
         } else {
+            free(novoElemento);
             return;
         }
 
