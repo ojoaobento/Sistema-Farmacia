@@ -45,7 +45,8 @@ void exclusaoMedicamento(TipoListaMedicamento *listaMedicamento){
             telaMedicamentos();
             dadosMedicamento(listaMedicamento, resultado);
 
-            gotoxy(30,19);
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMAR EXCLUSAO ( S/N ) ? ");
             scanf(" %c", &confirmacao);
 
@@ -96,7 +97,9 @@ void exclusaoMedicamento(TipoListaMedicamento *listaMedicamento){
                 return;
             }
         }
-        gotoxy(30,20);
+
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA EXCLUSAO ( S/N ) ? ");
         scanf(" %c", &exclusao);
 

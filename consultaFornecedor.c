@@ -42,7 +42,8 @@ void consultaFornecedor(TipoListaFornecedor *listaFornecedor){
             dadosFornecedor(listaFornecedor, codigo);
         }
 
-        gotoxy(30,19);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA CONSULTA ( S/N ) ? ");
         scanf(" %c", &consulta);
 

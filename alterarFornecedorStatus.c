@@ -18,7 +18,8 @@ void alterarFornecedorStatus(TipoListaFornecedor *listaFornecedor, int codigo){
     gotoxy(21,16);
     scanf("%d", &temporaria.status);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

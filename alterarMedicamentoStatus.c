@@ -18,7 +18,8 @@ void alterarMedicamentoStatus(TipoListaMedicamento *listaMedicamentos, int codig
     gotoxy(30,18);
     scanf("%d", &temporaria.status);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

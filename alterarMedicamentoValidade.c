@@ -20,7 +20,8 @@ void alterarMedicamentoValidade(TipoListaMedicamento *listaMedicamentos, int cod
     fflush(stdin);
     fgets(temporaria.validade,11,stdin);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

@@ -40,8 +40,9 @@ void inativarCliente(TipoListaCliente *listaCliente){
             tela();
             telaCliente();
             dadosCliente(listaCliente, codigo);
-            
-            gotoxy(30,19);
+
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMAR INATIVACAO ( S/N ) ? ");
             scanf(" %c", &confirmacao);
 
@@ -51,7 +52,9 @@ void inativarCliente(TipoListaCliente *listaCliente){
                 return;
             }
         }
-        gotoxy(30,20);
+
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA INATIVACAO ( S/N ) ? ");
         scanf(" %c", &novaInativacao);
     }while(novaInativacao != 'n' && novaInativacao != 'N');

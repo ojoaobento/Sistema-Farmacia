@@ -20,7 +20,8 @@ void alterarMedicamentoLote(TipoListaMedicamento *listaMedicamentos, int codigo)
     fflush(stdin);
     fgets(temporaria.lote,20,stdin);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

@@ -56,7 +56,8 @@ void inativarMedicamento(TipoListaMedicamento *listaMedicamento){
             telaMedicamentos();
             dadosMedicamento(listaMedicamento, resultado);
 
-            gotoxy(30,19);
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMAR INATIVACAO ( S/N ) ? ");
             scanf(" %c", &confirmacao);
 
@@ -70,7 +71,8 @@ void inativarMedicamento(TipoListaMedicamento *listaMedicamento){
             }
         }
 
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA INATIVACAO ( S/N ) ? ");
         scanf(" %c", &inativacao);
 

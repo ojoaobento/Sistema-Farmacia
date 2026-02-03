@@ -20,7 +20,8 @@ void alterarClienteEnd(TipoListaCliente *listaCliente, int codigo){
     fflush(stdin);
     fgets(temporaria.endereco,60,stdin);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMA ALTERACAO ( S/N ) ? ");
     scanf(" %c", &alteracao);
 

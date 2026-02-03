@@ -19,7 +19,8 @@ void alterarFornecedorNome(TipoListaFornecedor *listaFornecedor, int codigo){
     fflush(stdin);
     fgets(temporaria.nome,50,stdin);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

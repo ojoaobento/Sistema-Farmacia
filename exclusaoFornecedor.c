@@ -34,7 +34,8 @@ void exclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             telaFornecedor();
             dadosFornecedor(listaFornecedor, codigo);
 
-            gotoxy(30,19);
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMAR EXCLUSAO ( S/N ) ? ");
             scanf(" %c", &confirmacao);
 

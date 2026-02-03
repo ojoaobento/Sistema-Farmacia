@@ -32,7 +32,8 @@ void consultarMedicamento(TipoListaMedicamento *listaMedicamento){
             dadosMedicamento(listaMedicamento, resultado);
         }
 
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA CONSULTA ( S/N ) ? ");
         scanf(" %c", &consulta);
 

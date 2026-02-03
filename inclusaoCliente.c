@@ -157,7 +157,8 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
 
         novoCadastro->conteudo.status = 1;
 
-        gotoxy(30,19);
+        limpa_msg();
+        gotoxy(2,23);
         printf("CONFIRMA INCLUSAO ( S/N ) ? ");
         scanf(" %c", &confirmacao);
 
@@ -181,7 +182,8 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
             return;
         }
 
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA INCLUSAO ( S/N ) ? ");
         scanf(" %c", &inclusao);
 

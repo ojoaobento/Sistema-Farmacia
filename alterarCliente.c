@@ -82,8 +82,9 @@ void alterarCliente(TipoListaCliente *listaCliente){
                     return;
                     break;
                 }
-
-            gotoxy(30,20);
+            
+            limpa_msg();
+            gotoxy(2,23);
             printf("NOVA ALTERACAO ( S/N ) ? ");
             scanf(" %c", &novaAlteracao);
         }while(novaAlteracao != 'n' && novaAlteracao != 'N');

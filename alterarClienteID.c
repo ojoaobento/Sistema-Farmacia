@@ -37,7 +37,8 @@ void alterarClienteID(TipoListaCliente *listaCliente, int *codigo){
         }
     }while(codigoVerificacao == 1);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMA ALTERACAO (S/N) ? ");
     scanf(" %c", &alteracao);
 

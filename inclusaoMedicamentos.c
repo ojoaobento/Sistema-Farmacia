@@ -169,7 +169,8 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
 
         novoElemento->conteudo.status = 1;
 
-        gotoxy(30,19);
+        limpa_msg();
+        gotoxy(2,23);
         printf("CONFIRMAR INCLUSAO ( S/N ) ? ");
         scanf(" %c", &confirmacao);
 
@@ -191,8 +192,8 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
             free(novoElemento);
             return;
         }
-
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA INCLUSAO ( S/N ) ? ");
         scanf(" %c", &inclusao);
 

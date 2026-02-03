@@ -39,7 +39,8 @@ void exclusaoCliente(TipoListaCliente *listaCliente){
             dadosCliente(listaCliente, codigo);
 
 
-            gotoxy(30,19);
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMA EXCLUSAO ( S/N ) ? ");
             scanf(" %c", &exclusao);
 
@@ -97,7 +98,8 @@ void exclusaoCliente(TipoListaCliente *listaCliente){
 
         }
 
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA EXCLUSAO ( S/N ) ? ");
         scanf(" %c", &novaExclusao);
     } while(novaExclusao != 'n' && novaExclusao != 'N');

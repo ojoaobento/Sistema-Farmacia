@@ -18,7 +18,8 @@ void alterarMedicamentoPreco(TipoListaMedicamento *listaMedicamentos, int codigo
     gotoxy(30,16);
     scanf("%f", &temporaria.preco);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

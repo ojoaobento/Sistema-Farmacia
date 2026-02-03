@@ -20,7 +20,8 @@ void alterarMedicamentoPA(TipoListaMedicamento listaMedicamentos, int codigo){
     fflush(stdin);
     fgets(temporaria.principio_ativo,50,stdin);
 
-    gotoxy(30,19);
+    limpa_msg();
+    gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
     scanf(" %c", &confirmacao);
 

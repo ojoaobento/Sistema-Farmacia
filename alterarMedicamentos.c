@@ -81,7 +81,8 @@ void alterarMedicamentos(TipoListaMedicamento *listaMedicamentos, TipoListaForne
                     return;
                     break;
             }
-            gotoxy(30,20);
+            limpa_msg();
+            gotoxy(2,23);
             printf("NOVA ALTERACAO ( S/N ) ? ");
             scanf(" %c", &alteracao);
         }while(alteracao != 'n' && alteracao != 'N');

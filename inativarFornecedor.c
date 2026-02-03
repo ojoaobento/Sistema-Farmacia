@@ -54,7 +54,8 @@ void inativarFornecedor(TipoListaFornecedor *listaFornecedor){
             telaFornecedor();
             dadosFornecedor(listaFornecedor, codigo);
 
-            gotoxy(30,19);
+            limpa_msg();
+            gotoxy(2,23);
             printf("CONFIRMAR INATIVACAO ( S/N ) ? ");
             scanf(" %c", &confirmacao);
 
@@ -71,7 +72,9 @@ void inativarFornecedor(TipoListaFornecedor *listaFornecedor){
             }
 
         }
-        gotoxy(30,20);
+
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA INATIVACAO ( S/N ) ? ");
         scanf(" %c", &inativar);
     }while(inativar != 'n' && inativar != 'N');
