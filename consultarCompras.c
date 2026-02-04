@@ -4,6 +4,10 @@
 void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
 
     ApontadorMovimentacao p;
+    ApontadorMovimentacao pagina[100];
+    int paginaAtual=0;
+    int avancar=1;
+    char opcao;
     int i;
     int cont;
 
@@ -16,52 +20,72 @@ void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
         getch();
         return;
     }
-
-    system("cls");
-    telaOrdemCompras();
     ordenarCompras(listaMovimentacao);
 
-    p = listaMovimentacao->primeiro;
-    i=7;
-    while(p != NULL){
-        gotoxy(3,i);
-        printf("%d", p->conteudo.cd_cliente);
+    pagina[0] = listaMovimentacao->primeiro;
 
-        gotoxy(17,i);
-        printf("%d", p->conteudo.cd_medicamento);
+    while(avancar){
 
-        gotoxy(30,i);
-        printf("%d", p->conteudo.quantidade);
+        system("cls");
+        telaOrdemCompras();
+        p = pagina[paginaAtual];
 
-        gotoxy(42,i);
-        printf("R$ %.2f", p->conteudo.valor);
+        i=7;
+        cont = 0;
+        while(p != NULL && cont < 12){
+            gotoxy(3,i);
+            printf("%d", p->conteudo.cd_cliente);
 
-        gotoxy(57,i);
-        printf("R$ %.2f", p->conteudo.valor_total);
+            gotoxy(17,i);
+            printf("%d", p->conteudo.cd_medicamento);
 
-        gotoxy(72,i);
-        printf("%s", p->conteudo.dt_compra);
+            gotoxy(30,i);
+            printf("%d", p->conteudo.quantidade);
 
-        p = p->proximo;
-        i++;
-        cont++;
+            gotoxy(42,i);
+            printf("R$ %.2f", p->conteudo.valor);
 
-        if(cont == 12){   
-            limpa_msg();
-            gotoxy(2,23);
-            printf("SIGA PARA PROXIMA PAGINA.....");
-            getch();
-            system("cls");
-            telaOrdemCompras();
-            i=7;
-            cont=0;
+            gotoxy(57,i);
+            printf("R$ %.2f", p->conteudo.valor_total);
+
+            gotoxy(72,i);
+            printf("%s", p->conteudo.dt_compra);
+
+            p = p->proximo;
+            i++;
+            cont++;
+
+        }
+        limpa_msg();
+        gotoxy(2,23);
+        printf("[P] PROXIMA - [A] ANTERIOR - [S] SAIR : ");  
+        scanf(" %c", &opcao);
+
+        switch(opcao){
+            case 'P':
+            case 'p':
+                if(p != NULL && paginaAtual < 99){
+                    paginaAtual++;
+                    pagina[paginaAtual] = p;
+                }
+                break;
+            case 'A':
+            case 'a':
+                if(paginaAtual > 0){
+                    paginaAtual--;
+                }
+                break;
+            case 'S':
+            case 's':
+                return;
+                break;
+            default:
+                limpa_msg();
+                gotoxy(2,23);
+                printf("OPCAO INVALIDA, INSIRA NOVAMENTE......");
+                getch();
+                break;
         }
     }
-
-    limpa_msg();
-    gotoxy(2,23);
-    printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL....");
-    getch();
-    return;
 
 }
