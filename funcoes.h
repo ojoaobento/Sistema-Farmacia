@@ -34,8 +34,8 @@ typedef struct{
 typedef struct{
     int id;
     int id_fornecedor;
-    char nome[50];
-    char principio_ativo[50];
+    char nome[14];
+    char principio_ativo[20];
     char validade[11];
     char lote[20];
     float preco;

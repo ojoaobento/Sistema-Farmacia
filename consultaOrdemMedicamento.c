@@ -36,25 +36,19 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
             gotoxy(3,i);
             printf("%d", p_auxiliar->conteudo.id_fornecedor);
 
-            gotoxy(8,i);
+            gotoxy(10,i);
             printf("%d", p_auxiliar->conteudo.id);
 
             gotoxy(15,i);
             printf("%s", p_auxiliar->conteudo.nome);
 
-            gotoxy(23,i);
+            gotoxy(31,i);
             printf("%s", p_auxiliar->conteudo.principio_ativo);
 
-            gotoxy(32,i);
-            printf("%s", p_auxiliar->conteudo.validade);
-
-            gotoxy(43,i);
-            printf("%s", p_auxiliar->conteudo.lote);
-
             gotoxy(53,i);
-            printf("%.2f", p_auxiliar->conteudo.preco);
+            printf("R$ %.2f", p_auxiliar->conteudo.preco);
 
-            gotoxy(64,i);
+            gotoxy(65,i);
             printf("%d", p_auxiliar->conteudo.quantidade);
 
             gotoxy(75,i);

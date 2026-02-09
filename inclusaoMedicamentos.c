@@ -91,7 +91,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
 
             gotoxy(30,12);
             fflush(stdin);
-            fgets(novoElemento->conteudo.nome,50,stdin);
+            fgets(novoElemento->conteudo.nome,14,stdin);
             verificacao=0;
             removerLinha(novoElemento->conteudo.nome);
             if(strlen(novoElemento->conteudo.nome) == 0){
@@ -111,7 +111,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
 
             gotoxy(30,13);
             fflush(stdin);
-            fgets(novoElemento->conteudo.principio_ativo,50,stdin);
+            fgets(novoElemento->conteudo.principio_ativo,20,stdin);
             removerLinha(novoElemento->conteudo.principio_ativo);
             verificacao=0;
             if(strlen(novoElemento->conteudo.principio_ativo) == 0){

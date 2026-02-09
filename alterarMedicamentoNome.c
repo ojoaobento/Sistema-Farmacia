@@ -18,7 +18,7 @@ void alterarMedicamentoNome(TipoListaMedicamento *listaMedicamentos, int codigo)
 
     gotoxy(30,12);
     fflush(stdin);
-    fgets(temporaria.nome,50,stdin);
+    fgets(temporaria.nome,14,stdin);
 
     limpa_msg();
     gotoxy(2,23);

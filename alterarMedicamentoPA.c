@@ -18,7 +18,7 @@ void alterarMedicamentoPA(TipoListaMedicamento listaMedicamentos, int codigo){
 
     gotoxy(30,13);
     fflush(stdin);
-    fgets(temporaria.principio_ativo,50,stdin);
+    fgets(temporaria.principio_ativo,20,stdin);
 
     limpa_msg();
     gotoxy(2,23);
