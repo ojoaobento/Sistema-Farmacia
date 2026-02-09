@@ -27,12 +27,10 @@ void telaOrdemCliente(){
     gotoxy(3,3);  printf("FARMACIA");
     gotoxy(3,5);  printf("ID");
     gotoxy(9,5);  printf("NOME");
-    gotoxy(20,5); printf("CPF");
-    gotoxy(30,5); printf("TEL");
-    gotoxy(38,5); printf("EMAIL");
-    gotoxy(53,5); printf("END");
-    gotoxy(63,5); printf("DATA");
-    gotoxy(72,5); printf("STATUS");
+    gotoxy(24,5); printf("CPF");
+    gotoxy(42,5); printf("TEL");
+    gotoxy(62,5); printf("DATA");
+    gotoxy(75,5); printf("STA");
 
 
 

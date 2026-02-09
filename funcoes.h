@@ -10,12 +10,12 @@
 
 typedef struct{
     int id_cliente;
-    char nome[50];
-    char cpf[15];
+    char nome[16];
+    char cpf[12];
     char telefone[20];
     char email[50];
     char endereco[60];
-    char data_cadastro[19];
+    char data_cadastro[11];
     int status;
 }reg_clientes;
 

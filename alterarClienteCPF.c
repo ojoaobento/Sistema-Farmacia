@@ -19,7 +19,7 @@ void alterarClienteCPF(TipoListaCliente *listaCliente, int codigo){
 
         gotoxy(27,12);
         fflush(stdin);
-        fgets(temporaria.cpf,15,stdin);
+        fgets(temporaria.cpf,12,stdin);
 
         verificacao=0;
         if(strlen(temporaria.cpf) == 0){
@@ -28,7 +28,7 @@ void alterarClienteCPF(TipoListaCliente *listaCliente, int codigo){
             printf("PREENCHA O CAMPO CPF.......");
             verificacao=1;
             getch();
-        }else if(strlen(temporaria.cpf) != 14){
+        }else if(strlen(temporaria.cpf) != 11){
             limpa_msg();
             gotoxy(2,23);
             printf("CPF INVALIDO, INSIRA OUTRO.......");

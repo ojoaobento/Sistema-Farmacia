@@ -17,7 +17,7 @@ void alterarClienteNome(TipoListaCliente *listaCliente, int codigo){
 
     gotoxy(27,11);
     fflush(stdin);
-    fgets(temporaria.nome,50,stdin);
+    fgets(temporaria.nome,16,stdin);
 
     limpa_msg();
     gotoxy(2,23);

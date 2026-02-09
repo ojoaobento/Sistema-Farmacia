@@ -42,22 +42,16 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
             gotoxy(9,i);
             printf("%s", p_auxiliar->conteudo.nome);
 
-            gotoxy(20,i);
+            gotoxy(24,i);
             printf("%s", p_auxiliar->conteudo.cpf);
 
-            gotoxy(30,i);
+            gotoxy(42,i);
             printf("%s", p_auxiliar->conteudo.telefone);
 
-            gotoxy(38,i);
-            printf("%s", p_auxiliar->conteudo.email);
-
-            gotoxy(53,i);
-            printf("%s", p_auxiliar->conteudo.endereco);
-
-            gotoxy(63,i);
+            gotoxy(62,i);
             printf("%s", p_auxiliar->conteudo.data_cadastro);
 
-            gotoxy(72,i);
+            gotoxy(76,i);
             printf("%d", p_auxiliar->conteudo.status);
 
             i++;

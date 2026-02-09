@@ -53,7 +53,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
 
             gotoxy(27,11);
             fflush(stdin);
-            fgets(novoCadastro->conteudo.nome,50,stdin);
+            fgets(novoCadastro->conteudo.nome,16,stdin);
             removerLinha(novoCadastro->conteudo.nome);
             verificacao=0;
             if(strlen(novoCadastro->conteudo.nome) == 0){
@@ -73,7 +73,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
 
             gotoxy(27,12);
             fflush(stdin);
-            fgets(novoCadastro->conteudo.cpf,15,stdin);
+            fgets(novoCadastro->conteudo.cpf,12,stdin);
             removerLinha(novoCadastro->conteudo.cpf);
             verificacao=0;
             if(strlen(novoCadastro->conteudo.cpf) == 0){
@@ -82,7 +82,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
                 printf("PREENCHA O CAMPO CPF.......");
                 verificacao=1;
                 getch();
-            }else if(strlen(novoCadastro->conteudo.cpf) != 14){
+            }else if(strlen(novoCadastro->conteudo.cpf) != 11){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("CPF INVALIDO, INSIRA OUTRO.......");
@@ -143,7 +143,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
             limpa_msg();
             gotoxy(27,16);
             fflush(stdin);
-            fgets(novoCadastro->conteudo.data_cadastro,19,stdin);
+            fgets(novoCadastro->conteudo.data_cadastro,11,stdin);
             removerLinha(novoCadastro->conteudo.data_cadastro);
             verificacao=0;
             if(strlen(novoCadastro->conteudo.data_cadastro) == 0){

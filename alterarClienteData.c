@@ -17,7 +17,7 @@ void alterarClienteData(TipoListaCliente *listaCliente, int codigo){
 
     gotoxy(27,16);
     fflush(stdin);
-    fgets(temporaria.data_cadastro,19,stdin);
+    fgets(temporaria.data_cadastro,12,stdin);
 
     limpa_msg();
     gotoxy(2,23);
