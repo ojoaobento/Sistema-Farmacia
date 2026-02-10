@@ -44,6 +44,9 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                 telaBalancoAcervo();
                 limparFiltro();
 
+                gotoxy(62,3);
+                printf("PG %d", paginaAtual+1);
+
                 p = pagina[paginaAtual];
                 i = 7;
                 cont=0;
@@ -142,6 +145,9 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                     system("cls");
                     telaBalancoAcervo();
                     limparFiltro();
+
+                    gotoxy(62,3);
+                    printf("PG %d", segundaPagina+1);
 
                     p = outraPagina[segundaPagina];
                     i=7;

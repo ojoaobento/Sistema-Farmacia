@@ -10,8 +10,6 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
     char opcao;
     int avancar=1;
 
-
-
     if(listaCliente->primeiro == NULL){
         system("cls");
         tela();
@@ -29,6 +27,9 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
     while(avancar){
         system("cls");
         telaOrdemCliente();
+
+        gotoxy(62,3);
+        printf("PG %d", paginaAtual+1);
 
         p_auxiliar = pagina[paginaAtual];
         i=7;
@@ -77,7 +78,7 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
             case 'A':
             case 'a':
                 if(paginaAtual > 0){
-                        paginaAtual--;
+                    paginaAtual--;
                 }
                 break;
             case 'S':
@@ -89,15 +90,9 @@ void consultaOrdemCliente(TipoListaCliente *listaCliente){
                 gotoxy(2,23);
                 printf("OPCAO INVALIDA, INSIRA NOVAMENTE......");
                 getch();
+                return;
                 break;
             }
-    }  
-
-
-    limpa_msg();
-    gotoxy(2,23);
-    printf("PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU PRINCIPAL.....");
-    getch();
-    return;            
+    }       
         
 }

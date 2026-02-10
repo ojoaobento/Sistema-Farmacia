@@ -28,6 +28,10 @@ void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
 
         system("cls");
         telaOrdemCompras();
+        
+        gotoxy(62,3);
+        printf("PG %d", paginaAtual+1);
+
         p = pagina[paginaAtual];
 
         i=7;

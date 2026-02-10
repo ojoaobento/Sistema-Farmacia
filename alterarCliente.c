@@ -75,6 +75,7 @@ void alterarCliente(TipoListaCliente *listaCliente){
                     break;
                 default:
                     system("cls");
+                    tela();
                     limpa_msg();
                     gotoxy(2,23);
                     printf("OPCAO INVALIDA, RETORNE AO MENU PRINCIPAL.....");

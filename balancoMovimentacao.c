@@ -75,6 +75,7 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
         }else if (paginaAtual == 1){
             system("cls");
             telaRanking();
+
             paginaAtual=1;
             p = listaMedicamento->primeiro;
             while(p != NULL){

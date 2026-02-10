@@ -26,6 +26,9 @@ void consultarRegistrosMovimentacao(TipoListaEstoque *listaEstoque){
     while(avancar){
         system("cls");
         telaConsultaMovimentacao();
+        
+        gotoxy(62,3);
+        printf("PG %d", paginaAtual+1);
 
         p = pagina[paginaAtual];
         i=7;

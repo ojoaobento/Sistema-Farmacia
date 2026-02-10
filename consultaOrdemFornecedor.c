@@ -30,6 +30,10 @@ void consultaOrdemFornecedor(TipoListaFornecedor *listaFornecedor){
     while(avancar){
         system("cls");
         telaOrdemFornecedor();
+
+        gotoxy(62,3);
+        printf("PG %d", paginaAtual+1);
+
         i = 7;
         contador=0;
         p_auxiliar = pagina[paginaAtual];
