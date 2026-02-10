@@ -60,7 +60,7 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                     gotoxy(20,i);
                     printf("%s", p->conteudo.nome);
 
-                    gotoxy(45,i);
+                    gotoxy(47,i);
                     printf("%d", p->conteudo.quantidade);
 
                     r = listaMovimentacao->primeiro;
@@ -70,7 +70,7 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                         }
                         r = r->proximo;
                     }
-                    gotoxy(68,i);
+                    gotoxy(71,i);
                     printf("%d", totalVendido);
 
                     p = p->proximo;

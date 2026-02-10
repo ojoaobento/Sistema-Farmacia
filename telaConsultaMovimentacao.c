@@ -29,7 +29,7 @@ void telaConsultaMovimentacao(){
     gotoxy(3,5);  printf("ID M");
     gotoxy(20,5); printf("TIPO MOVIMENTACAO");
     gotoxy(52,5); printf("QUANT");
-    gotoxy(68,5); printf("DATA");
+    gotoxy(66,5); printf("DATA");
 
     gotoxy(52,19);
     printf("TIPO MOVIMENTACAO : ");

@@ -28,7 +28,7 @@ void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
 
         system("cls");
         telaOrdemCompras();
-        
+
         gotoxy(62,3);
         printf("PG %d", paginaAtual+1);
 
@@ -40,19 +40,19 @@ void consultarCompras(TipoListaMovimentacao *listaMovimentacao){
             gotoxy(3,i);
             printf("%d", p->conteudo.cd_cliente);
 
-            gotoxy(17,i);
+            gotoxy(20,i);
             printf("%d", p->conteudo.cd_medicamento);
 
-            gotoxy(30,i);
+            gotoxy(32,i);
             printf("%d", p->conteudo.quantidade);
 
             gotoxy(42,i);
             printf("R$ %.2f", p->conteudo.valor);
 
-            gotoxy(57,i);
+            gotoxy(55,i);
             printf("R$ %.2f", p->conteudo.valor_total);
 
-            gotoxy(72,i);
+            gotoxy(68,i);
             printf("%s", p->conteudo.dt_compra);
 
             p = p->proximo;

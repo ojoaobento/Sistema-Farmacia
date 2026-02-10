@@ -121,7 +121,7 @@ typedef struct{
 
 typedef struct{
     int id;
-    char nome_medicamento[50];
+    char nome_medicamento[14];
     int quantidade_vendida;
 }reg_ranking;
 

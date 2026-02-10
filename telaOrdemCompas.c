@@ -28,8 +28,8 @@ void telaOrdemCompras(){
     gotoxy(17,5); printf("COD MED");
     gotoxy(30,5); printf("QUANT");
     gotoxy(42,5); printf("VALOR U.");
-    gotoxy(57,5); printf("VALOR T.");
-    gotoxy(72,5); printf("DATA");
+    gotoxy(55,5); printf("VALOR T.");
+    gotoxy(68,5); printf("DATA");
 
 
 

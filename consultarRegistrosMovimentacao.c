@@ -37,13 +37,13 @@ void consultarRegistrosMovimentacao(TipoListaEstoque *listaEstoque){
             gotoxy(3,i);
             printf("%d", p->conteudo.id_medicamento);
 
-            gotoxy(20,i);
+            gotoxy(27,i);
             printf("%d", p->conteudo.tipo_reposicao);
 
-            gotoxy(52,i);
+            gotoxy(54,i);
             printf("%d", p->conteudo.quantidade);
 
-            gotoxy(68,i);
+            gotoxy(66,i);
             printf("%s", p->conteudo.data);
 
             p = p->proximo;
