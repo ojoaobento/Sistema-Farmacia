@@ -5,19 +5,32 @@ void alterarClienteData(TipoListaCliente *listaCliente, int codigo){
     char alteracao;
     reg_clientes temporaria;
     ApontadorCliente resultado;
+    int verificacao;
 
     resultado = pesquisaCliente(listaCliente, codigo);
 
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO");
 
-    gotoxy(27,16);
-    printf("                          ");               
+    do {
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO");
 
-    gotoxy(27,16);
-    fflush(stdin);
-    fgets(temporaria.data_cadastro,12,stdin);
+        gotoxy(27,16);
+        printf("                          ");               
+
+        gotoxy(27,16);
+        fflush(stdin);
+        fgets(temporaria.data_cadastro,12,stdin);
+        removerLinha(temporaria.data_cadastro);
+        verificacao=0;
+        if(strlen(temporaria.data_cadastro) == 0){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UMA DATA VALIDA........");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);   
 
     limpa_msg();
     gotoxy(2,23);

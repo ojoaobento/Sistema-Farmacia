@@ -5,19 +5,34 @@ void alterarClienteNome(TipoListaCliente *listaCliente, int codigo){
     char alteracao;
     reg_clientes temporaria;
     ApontadorCliente resultado;
+    int verificacao;
 
     resultado = pesquisaCliente(listaCliente, codigo);   
 
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO");
 
-    gotoxy(27,11);
-    printf("                                                            ");
+    do {
 
-    gotoxy(27,11);
-    fflush(stdin);
-    fgets(temporaria.nome,16,stdin);
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO");
+
+        gotoxy(27,11);
+        printf("                                                            ");
+
+        gotoxy(27,11);
+        fflush(stdin);
+        fgets(temporaria.nome,16,stdin);
+        removerLinha(temporaria.nome);
+        verificacao=0;
+        if(strlen(temporaria.nome) == 0){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UM NOME VALIDO.......");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);
+
 
     limpa_msg();
     gotoxy(2,23);

@@ -9,16 +9,28 @@ void alterarMedicamentoPA(TipoListaMedicamento listaMedicamentos, int codigo){
 
     resultado = pesquisaMedicamento(listaMedicamentos, codigo);   
 
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,13);
-    printf("                                                         ");
+    do {
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,13);
-    fflush(stdin);
-    fgets(temporaria.principio_ativo,20,stdin);
+        gotoxy(30,13);
+        printf("                                                         ");
+
+        gotoxy(30,13);
+        fflush(stdin);
+        fgets(temporaria.principio_ativo,20,stdin);
+        removerLinha(temporaria.principio_ativo);
+        verificacao=0;
+        if(strlen(temporaria.principio_ativo) == 0){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UM PRINCIPIO ATIVO VALIDO......");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);
 
     limpa_msg();
     gotoxy(2,23);

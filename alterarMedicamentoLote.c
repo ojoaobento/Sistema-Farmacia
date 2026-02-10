@@ -8,17 +8,29 @@ void alterarMedicamentoLote(TipoListaMedicamento *listaMedicamentos, int codigo)
 
     resultado = pesquisaMedicamento(listaMedicamentos, codigo);
     
-                    
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO......");
+                
+    do {
 
-    gotoxy(30,15);
-    printf("                                   ");
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,15);
-    fflush(stdin);
-    fgets(temporaria.lote,20,stdin);
+        gotoxy(30,15);
+        printf("                                   ");
+
+        gotoxy(30,15);
+        fflush(stdin);
+        fgets(temporaria.lote,20,stdin);
+        removerLinha(temporaria.lote);
+        verificacao=0;
+        if(strlen(temporaria.lote) == 0){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UM LOTE VALIDO.......");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);
 
     limpa_msg();
     gotoxy(2,23);

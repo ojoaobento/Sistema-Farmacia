@@ -9,16 +9,28 @@ void alterarMedicamentoNome(TipoListaMedicamento *listaMedicamentos, int codigo)
 
     resultado = pesquisaMedicamento(listaMedicamentos, codigo);
 
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO......");
+    do {
 
-    gotoxy(30,12);
-    printf("                                              ");
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,12);
-    fflush(stdin);
-    fgets(temporaria.nome,14,stdin);
+        gotoxy(30,12);
+        printf("                                              ");
+
+        gotoxy(30,12);
+        fflush(stdin);
+        fgets(temporaria.nome,14,stdin);
+        removerLinha(temporaria.nome);
+        verificacao=0;
+        if(strlen(temporaria.nome) == 0){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UM NOME VALIDO.......");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);
 
     limpa_msg();
     gotoxy(2,23);
