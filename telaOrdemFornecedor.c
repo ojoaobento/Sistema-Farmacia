@@ -26,9 +26,8 @@ void telaOrdemFornecedor(){
     gotoxy(3,3);  printf("FARMACIA");
     gotoxy(3,5);  printf("ID");
     gotoxy(9,5);  printf("NOME");
-    gotoxy(20,5); printf("CNPJ");
-    gotoxy(35,5); printf("TEL");
-    gotoxy(48,5); printf("EMAIL");
+    gotoxy(29,5); printf("CNPJ");
+    gotoxy(47,5); printf("TEL");
     gotoxy(71,5); printf("STATUS");
 
     gotoxy(2, 23);

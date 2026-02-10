@@ -39,7 +39,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
             limpa_msg();
             gotoxy(21,12);
             fflush(stdin);
-            fgets(novoElemento->conteudo.nome,50,stdin);
+            fgets(novoElemento->conteudo.nome,16,stdin);
             removerLinha(novoElemento->conteudo.nome);
             verificacao = 0;
             if(strlen(novoElemento->conteudo.nome) == 0){

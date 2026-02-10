@@ -17,7 +17,7 @@ void alterarFornecedorNome(TipoListaFornecedor *listaFornecedor, int codigo){
 
     gotoxy(21,12);
     fflush(stdin);
-    fgets(temporaria.nome,50,stdin);
+    fgets(temporaria.nome,16,stdin);
 
     limpa_msg();
     gotoxy(2,23);
