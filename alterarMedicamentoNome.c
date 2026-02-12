@@ -26,7 +26,7 @@ void alterarMedicamentoNome(TipoListaMedicamento *listaMedicamentos, int codigo)
         if(strlen(temporaria.nome) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM NOME VALIDO.......");
+            printf("PREENCHA O CAMPO NOME.......");
             verificacao=1;
             getch();
         }

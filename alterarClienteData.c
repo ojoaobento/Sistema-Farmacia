@@ -13,7 +13,7 @@ void alterarClienteData(TipoListaCliente *listaCliente, int codigo){
     do {
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO");
+        printf("ALTERANDO CAMPO..........");
 
         gotoxy(27,16);
         printf("                          ");               
@@ -26,7 +26,13 @@ void alterarClienteData(TipoListaCliente *listaCliente, int codigo){
         if(strlen(temporaria.data_cadastro) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UMA DATA VALIDA........");
+            printf("PREENCHA O CAMPO DATA........");
+            verificacao=1;
+            getch();
+        }else if (verificacaoData(temporaria.data_cadastro) != 1){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("DATA INVALIDA, INSIRA NOVAMENTE........");
             verificacao=1;
             getch();
         }

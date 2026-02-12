@@ -20,7 +20,7 @@ void telaCliente(){
     printf("ENDERECO..........: ");
 
     gotoxy(7,16);
-    printf("DATA CADASTRO.....: ");
+    printf("DATA(DD/MM/AAAA)..: ");
 
     gotoxy(7,17);
     printf("STATUS............: ");

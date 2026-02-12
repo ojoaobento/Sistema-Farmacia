@@ -18,5 +18,5 @@ void telaMovimentacao(){
     printf("VALOR TOTAL..............:");
 
     gotoxy(6,15);
-    printf("DATA.....................:");
+    printf("DATA(DD/MM/AAAA).........:");
 }

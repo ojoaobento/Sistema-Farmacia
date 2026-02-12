@@ -26,7 +26,7 @@ void alterarMedicamentoPA(TipoListaMedicamento listaMedicamentos, int codigo){
         if(strlen(temporaria.principio_ativo) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM PRINCIPIO ATIVO VALIDO......");
+            printf("PREENCHA O CAMPO PRINCIPIO ATIVO......");
             verificacao=1;
             getch();
         }

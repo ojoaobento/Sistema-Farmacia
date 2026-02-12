@@ -139,6 +139,12 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
                 printf("PREENCHA O CAMPO VALIDADE........");
                 verificacao=1;
                 getch();
+            }else if (verificacaoData(novoElemento->conteudo.validade) != 1){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("INSIRA UMA VALIDADE CORRETA........");
+                verificacao=1;
+                getch();      
             }
         }while(verificacao != 0);   
 

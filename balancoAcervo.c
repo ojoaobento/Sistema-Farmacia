@@ -113,7 +113,6 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
             break;
         case 2:
 
-
             if(listaMedicamento->primeiro == NULL){
                 system("cls");
                 tela();
@@ -122,7 +121,6 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
                 getch();
                 return;
             }
-
 
             p = listaMedicamento->primeiro;
             while(p != NULL){

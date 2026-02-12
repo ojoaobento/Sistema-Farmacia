@@ -14,7 +14,7 @@ void alterarClienteNome(TipoListaCliente *listaCliente, int codigo){
 
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO");
+        printf("ALTERANDO CAMPO.............");
 
         gotoxy(27,11);
         printf("                                                            ");
@@ -27,7 +27,7 @@ void alterarClienteNome(TipoListaCliente *listaCliente, int codigo){
         if(strlen(temporaria.nome) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM NOME VALIDO.......");
+            printf("PREENCHA O CAMPO NOME.......");
             verificacao=1;
             getch();
         }

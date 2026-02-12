@@ -26,7 +26,7 @@ void alterarMedicamentoLote(TipoListaMedicamento *listaMedicamentos, int codigo)
         if(strlen(temporaria.lote) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM LOTE VALIDO.......");
+            printf("PREENCHA O CAMPO LOTE.......");
             verificacao=1;
             getch();
         }

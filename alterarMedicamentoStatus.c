@@ -8,15 +8,25 @@ void alterarMedicamentoStatus(TipoListaMedicamento *listaMedicamentos, int codig
 
     resultado = pesquisaMedicamento(listaMedicamentos, codigo);  
 
-    limpa_msg();
-    gotoxy(2,23);
-    printf("ALTERANDO CAMPO......");
+    do {
+        limpa_msg();
+        gotoxy(2,23);
+        printf("ALTERANDO CAMPO......");
 
-    gotoxy(30,18);
-    printf("                     ");
+        gotoxy(30,18);
+        printf("                     ");
 
-    gotoxy(30,18);
-    scanf("%d", &temporaria.status);
+        gotoxy(30,18);
+        scanf("%d", &temporaria.status);
+        verificacao=0;
+        if(temporaria.status != 0 || temporaria.status != 1){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UM STATUS VALIDO.......");
+            verificacao=1;
+            getch();
+        }
+    }while(verificacao != 0);
 
     limpa_msg();
     gotoxy(2,23);

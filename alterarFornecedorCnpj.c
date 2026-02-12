@@ -15,7 +15,7 @@ void alterarFornecedorCnpj(TipoListaFornecedor *listaFornecedor, int codigo){
     do {
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO.....");
+        printf("ALTERANDO CAMPO.......");
 
         gotoxy(21,13);
         printf("                                ");

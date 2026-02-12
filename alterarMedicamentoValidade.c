@@ -10,7 +10,6 @@ void alterarMedicamentoValidade(TipoListaMedicamento *listaMedicamentos, int cod
 
 
     do {
-
         limpa_msg();
         gotoxy(2,23);
         printf("ALTERANDO CAMPO.....");
@@ -26,12 +25,21 @@ void alterarMedicamentoValidade(TipoListaMedicamento *listaMedicamentos, int cod
         if(strlen(temporaria.validade) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UMA VALIDADE CORRETA.........");
+            printf("PREENCHA O CAMPO VALIDADE.........");
+            verificacao=1;
+            getch();
+        }else if(verificacaoData(temporaria.validade) != 1){
+            limpa_msg();
+            gotoxy(2,23);
+            printf("INSIRA UMA VALIDADE VALIDA..........");
             verificacao=1;
             getch();
         }
     }while(verificacao != 0);
     
+
+
+
     limpa_msg();
     gotoxy(2,23);
     printf("CONFIRMAR ALTERACAO ( S/N ) ? ");

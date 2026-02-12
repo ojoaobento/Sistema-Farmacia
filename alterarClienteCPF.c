@@ -31,7 +31,7 @@ void alterarClienteCPF(TipoListaCliente *listaCliente, int codigo){
         }else if(strlen(temporaria.cpf) != 11){
             limpa_msg();
             gotoxy(2,23);
-            printf("CPF INVALIDO, INSIRA OUTRO.......");
+            printf("CPF INVALIDO, INSIRA NOVAMENTE.......");
             verificacao=1;
             getch();         
         }

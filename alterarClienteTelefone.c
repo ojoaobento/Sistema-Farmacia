@@ -14,7 +14,7 @@ void alterarClienteTelefone(TipoListaCliente *listaCliente, int codigo){
 
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO");
+        printf("ALTERANDO CAMPO............");
 
         gotoxy(27,13);
         printf("                    ");

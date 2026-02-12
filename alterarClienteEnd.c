@@ -15,7 +15,7 @@ void alterarClienteEnd(TipoListaCliente *listaCliente, int codigo){
 
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO");
+        printf("ALTERANDO CAMPO...............");
 
         gotoxy(27,15);
         printf("                                                                      ");
@@ -28,7 +28,7 @@ void alterarClienteEnd(TipoListaCliente *listaCliente, int codigo){
         if(strlen(temporaria.endereco) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM ENDERECO VALIDO.....");
+            printf("PREENCHA O CAMPO ENDERECO.............");
             verificacao=1;
             getch();
         }

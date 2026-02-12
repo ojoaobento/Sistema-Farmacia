@@ -13,7 +13,7 @@ void alterarFornecedorEmail(TipoListaFornecedor *listaFornecedor, int codigo){
 
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO.....");
+        printf("ALTERANDO CAMPO.......");
 
         gotoxy(21,15);
         printf("                                                  ");
@@ -26,7 +26,7 @@ void alterarFornecedorEmail(TipoListaFornecedor *listaFornecedor, int codigo){
         if(strlen(temporaria.email) == 0){
             limpa_msg();
             gotoxy(2,23);
-            printf("INSIRA UM EMAIL VALIDO......");
+            printf("PREENCHA O CAMPO EMAIL......");
             verificacao=1;
             getch();
         }

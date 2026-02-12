@@ -13,7 +13,7 @@ void alterarClienteID(TipoListaCliente *listaCliente, int *codigo){
     do {
         limpa_msg();
         gotoxy(2,23);
-        printf("ALTERANDO CAMPO");
+        printf("ALTERANDO CAMPO...............");
 
         gotoxy(27,10);
         printf("      ");
