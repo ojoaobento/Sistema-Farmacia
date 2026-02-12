@@ -131,9 +131,34 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
         gotoxy(33,14);
         printf("R$ %.2f", novo->conteudo.valor_total);
 
-        gotoxy(33,15);
-        fflush(stdin);
-        fgets(novo->conteudo.dt_compra,11,stdin);
+        do {
+
+            limpa_msg();
+            gotoxy(33,15);
+            printf("                  ");
+
+            gotoxy(33,15);
+            fflush(stdin);
+            fgets(temporaria.dt_compra,11,stdin);
+            removerLinha(temporaria.dt_compra);
+            verificacao=0;
+            if(strlen(temporaria.dt_compra) == 0){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("PREENCHA O CAMPO DATA.......");
+                verificacao=1;
+                getch();
+            }else if(verificacaoData(temporaria.dt_compra) != 1){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("DATA INVALIDA, INSIRA NOVAMENTE.......");
+                verificacao=1;
+                getch();            
+            }
+        }while(verificacao != 0);   
+        
+        
+        strcpy(novo->conteudo.dt_compra,temporaria.dt_compra);
 
         limpa_msg();
         gotoxy(2,23);

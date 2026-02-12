@@ -327,4 +327,6 @@ void ordenarRanking();
 
 void esvaziarRanking();
 
+int verificacaoData();
+
 #endif

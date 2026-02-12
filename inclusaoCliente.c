@@ -4,6 +4,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
     
     ApontadorCliente novoCadastro;
     ApontadorCliente p_auxiliar;
+    reg_clientes temp;
     char confirmacao;
     char inclusao;
     int verificacao;
@@ -142,19 +143,30 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
         do {
             limpa_msg();
             gotoxy(27,16);
+            printf("                       ");
+
+            gotoxy(27,16);
             fflush(stdin);
-            fgets(novoCadastro->conteudo.data_cadastro,11,stdin);
-            removerLinha(novoCadastro->conteudo.data_cadastro);
+            fgets(temp.data_cadastro,11,stdin);
+            removerLinha(temp.data_cadastro);
             verificacao=0;
-            if(strlen(novoCadastro->conteudo.data_cadastro) == 0){
+            if(strlen(temp.data_cadastro) == 0){
                 limpa_msg();
                 gotoxy(2,23);
                 printf("PREENCHA O CAMPO DATA DE CADASTRO......");
                 verificacao=1;
                 getch();
+            }else if(verificacaoData(temp.data_cadastro) != 1){
+                limpa_msg();
+                gotoxy(2,23);
+                printf("DATA INVALIDA, INSIRA NOVAMENTE.....");
+                verificacao=1;
+                getch();
             }
+
         }while(verificacao != 0);
 
+        strcpy(novoCadastro->conteudo.data_cadastro,temp.data_cadastro);
         novoCadastro->conteudo.status = 1;
 
         limpa_msg();
