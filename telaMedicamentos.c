@@ -16,7 +16,7 @@ void telaMedicamentos(){
     printf("PRINCIPIO ATIVO......: ");
 
     gotoxy(7,14);
-    printf("VALIDADE.............: ");
+    printf("VALIDADE(DD/MM/AAAA).: ");
 
     gotoxy(7,15);
     printf("LOTE.................: ");
