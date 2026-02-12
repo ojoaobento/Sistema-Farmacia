@@ -20,7 +20,7 @@ void alterarClienteStatus(TipoListaCliente *listaCliente, int codigo){
         gotoxy(27,17);
         scanf("%d", &temporaria.status);
         verificacao=0;
-        if(temporaria.status != 0 || temporaria.status != 1){
+        if(temporaria.status != 0 && temporaria.status != 1){
             limpa_msg();
             gotoxy(2,23);
             printf("INSIRA UM STATUS VALIDO.......");

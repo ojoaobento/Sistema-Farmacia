@@ -25,7 +25,7 @@ void alterarFornecedorStatus(TipoListaFornecedor *listaFornecedor, int codigo){
         printf("CONFIRMAR ALTERACAO ( S/N ) ? ");
         scanf(" %c", &confirmacao);
         verificacao=0;
-        if(temporaria.status != 0 || temporaria.status != 1){
+        if(temporaria.status != 0 && temporaria.status != 1){
             limpa_msg();
             gotoxy(2,23);
             printf("INSIRA UM STATUS VALIDO.......");
