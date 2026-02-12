@@ -19,6 +19,7 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
     char alternativa;
 
     do {
+
         if(paginaAtual == 0){
             system("cls");
             telaBalancoMovimentacao();
@@ -108,8 +109,16 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
 
                 p = p->proximo;
             }
-
-            ordenarRanking(listaRanking);
+            
+            if(listaRanking->primeiro != NULL){
+                ordenarRanking(listaRanking);
+            }else{
+                gotoxy(2,23);
+                printf("OS RANKINGS ESTAO VAZIO...........");
+                getch();
+                paginaAtual=0;
+                continue;
+            }
 
             
             i=11;

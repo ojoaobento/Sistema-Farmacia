@@ -112,6 +112,18 @@ void balancoAcervo(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
             }
             break;
         case 2:
+
+
+            if(listaMedicamento->primeiro == NULL){
+                system("cls");
+                tela();
+                gotoxy(2,23);
+                printf("NAO EXISTE MEDICAMENTOS CADASTRADOS, RETORNE AO MENU PRINCIPAL.....");
+                getch();
+                return;
+            }
+
+
             p = listaMedicamento->primeiro;
             while(p != NULL){
                 totalVendido=0;

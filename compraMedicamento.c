@@ -12,7 +12,27 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
     char novaCompra;
     char confirmar;
 
+
+    if(listaMedicamento->primeiro == NULL){
+        system("cls");
+        tela();
+        limpa_msg();
+        gotoxy(2,23);
+        printf("NAO EXISTE MEDICAMENTOS CADASTRADOS, VOLTE AO MENU PRINCIPAL.....");
+        getch();
+        return;
+    } else if(listaCliente->primeiro == NULL){
+        system("cls");
+        tela();
+        limpa_msg();
+        gotoxy(2,23);
+        printf("NAO EXISTE CLIENTES CADASTRADOS, VOLTE AO MENU PRINCIPAL.....");
+        getch();
+        return;       
+    }
+
     do {
+
         system("cls");
         tela();
         telaMovimentacao();
@@ -115,8 +135,8 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
         fflush(stdin);
         fgets(novo->conteudo.dt_compra,11,stdin);
 
-
-        gotoxy(30,19);
+        limpa_msg();
+        gotoxy(2,23);
         printf("CONFIRMAR COMPRA ( S/N ) ? ");
         scanf(" %c", &confirmar);
 
@@ -136,7 +156,8 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
             return;
         }
 
-        gotoxy(30,20);
+        limpa_msg();
+        gotoxy(2,23);
         printf("NOVA COMPRA ( S/N ) ? ");
         scanf(" %c", &novaCompra);
 
