@@ -4,6 +4,7 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
 
     ApontadorFornecedor novoElemento;
     ApontadorFornecedor p_auxiliar;
+    ApontadorFornecedor r_auxiliar;
     char confirmacao;
     char inclusao;
     int verificacao;
@@ -54,14 +55,30 @@ void inclusaoFornecedor(TipoListaFornecedor *listaFornecedor){
 
         do {
 
-            gotoxy(21,13);
-            printf("                                ");
+            do {
+                limpa_msg();
 
-            limpa_msg();
-            gotoxy(21,13);
-            fflush(stdin);
-            fgets(novoElemento->conteudo.cnpj,15,stdin);
-            removerLinha(novoElemento->conteudo.cnpj);
+                gotoxy(21,13);
+                printf("                                ");
+
+                gotoxy(21,13);
+                fflush(stdin);
+                fgets(novoElemento->conteudo.cnpj,15,stdin);
+                removerLinha(novoElemento->conteudo.cnpj);
+                verificacao=0;
+                r_auxiliar = listaFornecedor->primeiro;
+                while(r_auxiliar != NULL){
+                    if(strcmp(r_auxiliar->conteudo.cnpj,novoElemento->conteudo.cnpj) == 0){      
+                        limpa_msg();
+                        gotoxy(2,23);
+                        printf("ESSE CNPJ JA ESTA CADASTRADO, INSIRA OUTRO........");
+                        getch();
+                        verificacao=1;
+                    }
+                    r_auxiliar = r_auxiliar->proximo;
+                }
+            }while(verificacao != 0);
+
             verificacao = 0;
             outraVerificacao=0;
             if(strlen(novoElemento->conteudo.cnpj) == 0){

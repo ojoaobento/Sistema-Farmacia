@@ -48,7 +48,7 @@ void consultaOrdemFornecedor(TipoListaFornecedor *listaFornecedor){
             gotoxy(29,i);
             printf("%s", p_auxiliar->conteudo.cnpj);
 
-            gotoxy(47,i);
+            gotoxy(50,i);
             printf("%s", p_auxiliar->conteudo.telefone);
 
             gotoxy(73,i);

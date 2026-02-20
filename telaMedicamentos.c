@@ -22,7 +22,7 @@ void telaMedicamentos(){
     printf("LOTE.................: ");
 
     gotoxy(7,16);
-    printf("PRECO................: ");
+    printf("PRECO................: R$ ");
 
     gotoxy(7,17);
     printf("QUANTIDADE...........: ");
