@@ -4,6 +4,7 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
     
     ApontadorCliente novoCadastro;
     ApontadorCliente p_auxiliar;
+    ApontadorCliente r_auxiliar;
     reg_clientes temp;
     char confirmacao;
     char inclusao;
@@ -67,15 +68,33 @@ void inclusaoCliente(TipoListaCliente *listaCliente){
         }while(verificacao != 0);
 
         do {
-            limpa_msg();
 
-            gotoxy(27,12);
-            printf("                                        ");
+            do {
+                limpa_msg();
 
-            gotoxy(27,12);
-            fflush(stdin);
-            fgets(novoCadastro->conteudo.cpf,12,stdin);
-            removerLinha(novoCadastro->conteudo.cpf);
+                gotoxy(27,12);
+                printf("                                        ");
+
+                gotoxy(27,12);
+                fflush(stdin);
+                fgets(novoCadastro->conteudo.cpf,12,stdin);
+                removerLinha(novoCadastro->conteudo.cpf);
+
+                
+                r_auxiliar = listaCliente->primeiro;
+                verificacao=0;
+                while(r_auxiliar != NULL){
+                    if(strcmp(r_auxiliar->conteudo.cpf, novoCadastro->conteudo.cpf)==0){
+                        limpa_msg();
+                        gotoxy(2,23);
+                        printf("ESSE CPF JA ESTA CADASTRADO, INSIRA OUTRO........");
+                        getch();
+                        verificacao=1;
+                    }
+                    r_auxiliar = r_auxiliar->proximo;
+                }
+            }while(verificacao != 0);
+
             verificacao=0;
             if(strlen(novoCadastro->conteudo.cpf) == 0){
                 limpa_msg();
