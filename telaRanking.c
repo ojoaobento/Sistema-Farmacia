@@ -21,8 +21,8 @@ void telaRanking(){
     gotoxy(1,22);  printf("+");   gotoxy(79,22); printf("+");
     gotoxy(1,24);  printf("+");   gotoxy(79,24); printf("+");
 
-    gotoxy(3,2);  printf("XYZ FARMACIA VIDA+");
-    gotoxy(3,3);  printf("CONTROLE DE CUSTOS DA FARMACIA");
+    gotoxy(3,2);  printf("FARMACIA VIDA+");
+    gotoxy(3,3);  printf("CONTROLE DE CUSTOS");
 
     gotoxy(3,5);
     printf("99/99/99");

@@ -20,7 +20,7 @@ void tela(){
     gotoxy(1,22);  printf("+");   gotoxy(79,22); printf("+");
     gotoxy(1,24);  printf("+");   gotoxy(79,24); printf("+");
 
-    gotoxy(3,2);  printf("SISTEMA FARMACIA");
+    gotoxy(3,2);  printf("VIDA+");
     gotoxy(3,3);  printf("");
     gotoxy(3,4);  printf("");
     gotoxy(43,2); printf("");

@@ -24,8 +24,8 @@ void telaConsultaMovimentacao(){
     gotoxy(1,22);  printf("+");   gotoxy(79,22); printf("+");
     gotoxy(1,24);  printf("+");   gotoxy(79,24); printf("+");
 
-    gotoxy(3,2);  printf("XYZ");
-    gotoxy(3,3);  printf("FARMACIA");
+    gotoxy(3,2);  printf("FARMACIA");
+    gotoxy(13,2);  printf("VIDA+");
     gotoxy(3,5);  printf("ID M");
     gotoxy(20,5); printf("TIPO MOVIMENTACAO");
     gotoxy(52,5); printf("QUANT");

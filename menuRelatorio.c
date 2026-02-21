@@ -8,6 +8,9 @@ void menuRelatorio(TipoListaMedicamento *listaMedicamento, TipoListaMovimentacao
         system("cls");
         tela();
 
+        gotoxy(36,9);
+        printf("RELATORIOS");
+
         gotoxy(32,12);
         printf("1 - BALANCO DO ACERVO");
 
