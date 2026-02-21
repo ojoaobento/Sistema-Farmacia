@@ -20,7 +20,7 @@ void dadosMedicamento(TipoListaMedicamento *listaMedicamento, ApontadorMedicamen
     gotoxy(30,15);
     printf("%s", resultado->conteudo.lote);
 
-    gotoxy(30,16);
+    gotoxy(33,16);
     printf("%.2f", resultado->conteudo.preco);
 
     gotoxy(30,17);

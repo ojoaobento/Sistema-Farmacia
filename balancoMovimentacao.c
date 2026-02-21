@@ -50,9 +50,9 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
                 t = listaMovimentacao->primeiro;
                 verificacao=0;
                 while(t != NULL){
-                    contV += t->conteudo.quantidade;
                     if(t->conteudo.cd_medicamento == p->conteudo.id){
                         verificacao = 1;
+                        contV += t->conteudo.quantidade;
                     }
                     t = t->proximo;
                 }
@@ -132,7 +132,7 @@ void balancoMovimentacao(TipoListaCliente *listaCliente,TipoListaMedicamento *li
                 gotoxy(32,i);
                 printf("%s", h->conteudo.nome_medicamento);
 
-                gotoxy(67,i);
+                gotoxy(71,i);
                 printf("%d", h->conteudo.quantidade_vendida);
 
                 cont++;

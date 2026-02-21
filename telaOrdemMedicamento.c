@@ -25,7 +25,7 @@ void telaOrdemMedicamento(){
 
     gotoxy(3,2);  printf("XYZ");
     gotoxy(3,3);  printf("FARMACIA");
-    gotoxy(3,5);  printf("ID-F");
+    gotoxy(2,5);  printf("ID-F");
     gotoxy(8,5); printf("ID-M");
     gotoxy(15,5); printf("NOME");
     gotoxy(31,5); printf("PA");

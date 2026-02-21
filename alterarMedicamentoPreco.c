@@ -15,7 +15,7 @@ void alterarMedicamentoPreco(TipoListaMedicamento *listaMedicamentos, int codigo
     gotoxy(30,16);
     printf("                  ");
 
-    gotoxy(30,16);
+    gotoxy(33,16);
     scanf("%f", &temporaria.preco);
 
     limpa_msg();

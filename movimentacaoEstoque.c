@@ -72,11 +72,33 @@ void movimentacaoEstoque(TipoListaMedicamento *listaMedicamento, TipoListaEstoqu
 
                     gotoxy(30,17);
                     printf("%d  +  %d = %d",resultado->conteudo.quantidade,temporaria.quantidade, resultado->conteudo.quantidade + temporaria.quantidade);
+                    
+                    do {
 
-                    gotoxy(7,19);
-                    printf("DATA MOVIMENTACAO....: ");
-                    fflush(stdin);
-                    fgets(estoque->conteudo.data,11,stdin);
+                        limpa_msg();
+                        gotoxy(30,19);
+                        printf("                   ");
+
+                        gotoxy(7,19);
+                        printf("DATA MOVIMENTACAO....: ");
+                        fflush(stdin);
+                        fgets(estoque->conteudo.data,11,stdin);
+                        removerLinha(estoque->conteudo.data);
+                        verificacao=0;
+                        if(strlen(estoque->conteudo.data) == 0){
+                            limpa_msg();
+                            gotoxy(2,23);
+                            printf("PREENCHA O CAMPO DATA.......");
+                            verificacao=1;
+                            getch();
+                        }else if(verificacaoData(estoque->conteudo.data) != 1){
+                            limpa_msg();
+                            gotoxy(2,23);
+                            printf("INSIRA UMA DATA VALIDA.......");
+                            verificacao=1;
+                            getch();
+                        }
+                    }while(verificacao != 0);
 
                     limpa_msg();
                     gotoxy(2,23);
@@ -120,11 +142,34 @@ void movimentacaoEstoque(TipoListaMedicamento *listaMedicamento, TipoListaEstoqu
 
                     gotoxy(30,17);
                     printf("%d  -  %d = %d",resultado->conteudo.quantidade,temporaria.quantidade, resultado->conteudo.quantidade - temporaria.quantidade);
+                    
+                    do {
 
-                    gotoxy(7,19);
-                    printf("DATA MOVIMENTACAO....: ");
-                    fflush(stdin);
-                    fgets(estoque->conteudo.data,11,stdin);
+                        limpa_msg();
+                        gotoxy(30,19);
+                        printf("                   ");
+
+                        gotoxy(7,19);
+                        printf("DATA MOVIMENTACAO....: ");
+                        fflush(stdin);
+                        fgets(estoque->conteudo.data,11,stdin);
+                        removerLinha(estoque->conteudo.data);
+                        verificacao=0;
+
+                        if(strlen(estoque->conteudo.data) == 0){
+                            limpa_msg();
+                            gotoxy(2,23);
+                            printf("PREENCHA O CAMPO DATA.......");
+                            verificacao=1;
+                            getch();
+                        }else if(verificacaoData(estoque->conteudo.data) != 1){
+                            limpa_msg();
+                            gotoxy(2,23);
+                            printf("INSIRA UMA DATA VALIDA.......");
+                            verificacao=1;
+                            getch();
+                        }
+                    }while(verificacao != 0);
 
                     limpa_msg();
                     gotoxy(2,23);

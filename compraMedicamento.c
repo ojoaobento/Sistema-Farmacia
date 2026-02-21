@@ -53,7 +53,7 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
                 if(temporaria.cd_cliente == p->conteudo.id_cliente && p->conteudo.status == 1){
                     novo->conteudo.cd_cliente = temporaria.cd_cliente;
                     verificacao=1;
-                    gotoxy(38,10);
+                    gotoxy(36,10);
                     printf(" - %s", p->conteudo.nome);
                     break;
                 }
@@ -84,7 +84,7 @@ void compraMedicamento(TipoListaMovimentacao *listaMovimentacao, TipoListaClient
                 if(temporaria.cd_medicamento == r->conteudo.id && r->conteudo.status == 1 && r->conteudo.quantidade > 0){
                     novo->conteudo.cd_medicamento = temporaria.cd_medicamento;
                     verificacao=1;
-                    gotoxy(38,11);
+                    gotoxy(36,11);
                     printf("- %s", r->conteudo.nome);
                     break;
                 }

@@ -167,7 +167,7 @@ void inclusaoMedicamentos(TipoListaMedicamento *listaMedicamento, TipoListaForne
             }
         }while(verificacao != 0);
 
-        gotoxy(30,16);
+        gotoxy(33,16);
         scanf("%f", &novoElemento->conteudo.preco);
 
         gotoxy(30,17);

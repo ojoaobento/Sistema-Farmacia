@@ -40,7 +40,7 @@ void consultaOrdemMedicamento(TipoListaMedicamento *listaMedicamento){
             gotoxy(3,i);
             printf("%d", p_auxiliar->conteudo.id_fornecedor);
 
-            gotoxy(10,i);
+            gotoxy(9,i);
             printf("%d", p_auxiliar->conteudo.id);
 
             gotoxy(15,i);
